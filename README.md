@@ -3,7 +3,7 @@
 <p align="center"> 
 <a href="https://github.com/venGaza/ukdah/tree/master"><img src="https://img.shields.io/github/repo-size/venGaza/ukdah.svg?style=for-the-badge" alt="npm version"></a>
 <a href="https://github.com/venGaza/ukdah/tree/master"><img src="https://img.shields.io/github/issues/venGaza/ukdah.svg?style=for-the-badge" alt="npm version">
-<a href="https://github.com/venGaza/ukdah/tree/master"><img src="https://img.shields.io/github/license/venGaza/ukdah.svg?style=for-the-badge" alt="npm version">
+<a href="https://github.com/venGaza/ukdah/tree/master"><img src="https://img.shields.io/github/license/venGaza/ukdah.svg?style=for-the-badge" alt="npm version"></a>
 </p>
 
 Awards play a critical role in recognizing employee accomplishments and boosting morale within an organization but most systems are out of date or too reliant upon an extensive human resources staff. The Ukdah team aims to solve this problem by working on a database-backed, responsive website which can be used to track and deliver employee recognition awards. The website will streamline the recognition process by giving users the ability to send recognition to those that they feel are deserving, and it will also provide critical business intelligence data to users overseeing the management of their awards program. Every employee deserves to be recognized for the value he/she brings to their respective organizations while organizations deserve a simple and effective solution to accomplish this. The Ukdah employee recognition website will lead the way!
