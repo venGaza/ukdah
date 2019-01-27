@@ -1,4 +1,4 @@
-![Alt text](public/images/banner.jpg?raw=true "Title")
+![Alt text](public/images/banner.jpg?raw=true "Ukdah | Employee Recognition Portal")
 
 Awards play a critical role in recognizing employee accomplishments and boosting morale within an organization but most systems are out of date or too reliant upon an extensive human resources staff. The Ukdah team aims to solve this problem by working on a database-backed, responsive website which can be used to track and deliver employee recognition awards. The website will streamline the recognition process by giving users the ability to send recognition to those that they feel are deserving, and it will also provide critical business intelligence data to users overseeing the management of their awards program. Every employee deserves to be recognized for the value he/she brings to their respective organizations while organizations deserve a simple and effective solution to accomplish this. The Ukdah employee recognition website will lead the way!    
 
@@ -20,7 +20,7 @@ git
 
 Navigate to desired directory within the command line. Then download the project with the following command:
 
-```
+```bash
 $ git clone https://github.com/venGaza/ukdah.git
 ```
 
@@ -28,7 +28,7 @@ $ git clone https://github.com/venGaza/ukdah.git
 
 Next, run the following command to install Ukdah's dependencies:
 
-```
+```bash
 # Move into project directory and install dependencies
 $ cd ukdah
 $ npm install
@@ -38,7 +38,7 @@ $ npm install
 
 Lastly, the web application can be started with the following command:
 
-```
+```bash
 # Default Port (3000)
 $ npm start 
 
@@ -59,14 +59,14 @@ $ npm start
 
 PM2 is a process kept in the background, a daemon, that takes care of all your running processes. If you wish to give the web application persistence, run the following command to start the pm2 daemon:
 
-```
+```bash
 # Start the PM2 daemon
 $ node_module/pm2/bin/pm2 start npm --name <NameOfApp> -- start
 ```
 
 To stop the daemon run the following command:
 
-```
+```bash
 # Stop the PM2 daemon
 $ node_module/pm2/bin/pm2 stop <NameOfApp>
 ```
@@ -75,7 +75,7 @@ $ node_module/pm2/bin/pm2 stop <NameOfApp>
 
 Errors running the web application? Try reinstalling the dependencies:
 
-```
+```bash
 # Clear out the cache
 $ npm cache clean --force
 
