@@ -49,6 +49,24 @@ $ npm start
 # Example (Start app on port 8080)
 export PORT=8080
 npm start
+
+# To stop the process use the keyboard interrupt ^c
+```
+
+### Persistence (via PM2)
+
+PM2 is a process kept in the background, a daemon, that takes care of all your running processes. If you wish to give the web application persistence, run the following command to start the pm2 daemon:
+
+```
+# Start the PM2 daemon
+$ node_module/pm2/bin/pm2 start npm --name <NameTheApp> -- start
+```
+
+To stop the daemon run the following command:
+
+```
+# Stop the PM2 daemon
+$ node_module/pm2/bin/pm2 stop npm
 ```
 
 ### Errors
