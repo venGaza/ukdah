@@ -3,6 +3,7 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+var sqlite3 = require('sqlite3').verbose()
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
