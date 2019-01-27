@@ -42,7 +42,7 @@ $ npm start
 
 or
 
-# Specify port
+# Specify port (PORT var will persist until shell is closed)
 export PORT=<desiredPort>
 $ npm start
 
@@ -73,7 +73,7 @@ $ npm start
 
 - [expressJS](https://github.com/expressjs/express) - The server for handling and routing HTTP requests
 - [Passport](https://github.com/jaredhanson/passport) - For handling user authentication
-- [Forever](https://github.com/foreverjs/forever) - A simple CLI tool for ensuring that a given script runs continuously (i.e. forever)
+- [PM2](https://github.com/Unitech/pm2) - PM2 is a production process manager for Node.js applications with a built-in load balancer. 
 - [Helmet](https://github.com/helmetjs/helmet) - Helmet helps you secure your Express apps by setting various HTTP headers
 - [serve-favicon](https://expressjs.com/en/resources/middleware/serve-favicon.html) - Serve a favicon
 - [SQLite3](https://www.npmjs.com/package/sqlite3) - Asynchronous, non-blocking SQLite3 bindings for Node.js
