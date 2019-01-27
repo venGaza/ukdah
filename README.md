@@ -1,7 +1,26 @@
 ![Alt text](public/images/banner.jpg?raw=true "Ukdah | Employee Recognition Portal")
 
-Awards play a critical role in recognizing employee accomplishments and boosting morale within an organization but most systems are out of date or too reliant upon an extensive human resources staff. The Ukdah team aims to solve this problem by working on a database-backed, responsive website which can be used to track and deliver employee recognition awards. The website will streamline the recognition process by giving users the ability to send recognition to those that they feel are deserving, and it will also provide critical business intelligence data to users overseeing the management of their awards program. Every employee deserves to be recognized for the value he/she brings to their respective organizations while organizations deserve a simple and effective solution to accomplish this. The Ukdah employee recognition website will lead the way!    
+Awards play a critical role in recognizing employee accomplishments and boosting morale within an organization but most systems are out of date or too reliant upon an extensive human resources staff. The Ukdah team aims to solve this problem by working on a database-backed, responsive website which can be used to track and deliver employee recognition awards. The website will streamline the recognition process by giving users the ability to send recognition to those that they feel are deserving, and it will also provide critical business intelligence data to users overseeing the management of their awards program. Every employee deserves to be recognized for the value he/she brings to their respective organizations while organizations deserve a simple and effective solution to accomplish this. The Ukdah employee recognition website will lead the way!
 
+## Table of Contents
+- [Table of Contents](#table-of-contents)
+- [Getting Started](#getting-started)
+  - [Prerequisites](#prerequisites)
+  - [Download the Project (Command Line)](#download-the-project-command-line)
+  - [Install](#install)
+  - [Run](#run)
+  - [Persistence (via PM2)](#persistence-via-pm2)
+  - [Errors](#errors)
+- [Dependencies & Middleware](#dependencies--middleware)
+- [Application Structure](#application-structure)
+- [Authentication](#authentication)
+- [Certificate Generation](#certificate-generation)
+- [Business Intelligence Analytics](#business-intelligence-analytics)
+- [Built With](#built-with)
+- [Authors](#authors)
+- [License](#license)
+- [Acknowledgments](#acknowledgments)
+  
 ## Getting Started
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
@@ -16,7 +35,7 @@ npm
 git
 ```
 
-### Download the project (Command Line)
+### Download the Project (Command Line)
 
 Navigate to desired directory within the command line. Then download the project with the following command:
 
