@@ -59,14 +59,14 @@ PM2 is a process kept in the background, a daemon, that takes care of all your r
 
 ```
 # Start the PM2 daemon
-$ node_module/pm2/bin/pm2 start npm --name <NameTheApp> -- start
+$ node_module/pm2/bin/pm2 start npm --name <NameOfApp> -- start
 ```
 
 To stop the daemon run the following command:
 
 ```
 # Stop the PM2 daemon
-$ node_module/pm2/bin/pm2 stop npm
+$ node_module/pm2/bin/pm2 stop <NameOfApp>
 ```
 
 ### Errors
