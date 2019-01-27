@@ -1,6 +1,6 @@
 ![Alt text](public/images/banner.jpg?raw=true "Ukdah | Employee Recognition Portal")
 
-<p align="center"> Ukdah
+<p align="center"> 
 <a href="https://github.com/venGaza/ukdah/tree/master"><img src="https://img.shields.io/github/repo-size/venGaza/ukdah.svg?style=for-the-badge" alt="npm version"></a>
 <a href="https://github.com/venGaza/ukdah/tree/master"><img src="https://img.shields.io/github/issues/venGaza/ukdah.svg?style=for-the-badge" alt="npm version">
 <a href="https://github.com/venGaza/ukdah/tree/master"><img src="https://img.shields.io/github/license/venGaza/ukdah.svg?style=for-the-badge" alt="npm version">
