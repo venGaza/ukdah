@@ -28,6 +28,7 @@ $ git clone https://github.com/venGaza/ukdah.git
 Next, run the following command to install Ukdah's dependencies:
 
 ```
+# Move into project directory and install dependencies
 $ cd ukdah
 $ npm install
 ```
@@ -43,12 +44,12 @@ $ npm start
 or
 
 # Specify port (PORT var will persist until shell is closed)
-export PORT=<desiredPort>
+$ export PORT=<desiredPort>
 $ npm start
 
 # Example (Start app on port 8080)
-export PORT=8080
-npm start
+$ export PORT=8080
+$ npm start
 
 # To stop the process use the keyboard interrupt ^c
 ```
