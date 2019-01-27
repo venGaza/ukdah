@@ -4,6 +4,7 @@ Awards play a critical role in recognizing employee accomplishments and boosting
 
 ## Table of Contents
 - [Table of Contents](#table-of-contents)
+- [Screenshots](#screenshots)
 - [Getting Started](#getting-started)
   - [Prerequisites](#prerequisites)
   - [Download the Project (Command Line)](#download-the-project-command-line)
@@ -20,6 +21,8 @@ Awards play a critical role in recognizing employee accomplishments and boosting
 - [Authors](#authors)
 - [License](#license)
 - [Acknowledgments](#acknowledgments)
+
+## Screenshots
   
 ## Getting Started
 
