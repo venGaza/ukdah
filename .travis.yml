@@ -11,5 +11,3 @@ branches:
   except:
   - test
 
-script:
-  - npm start
