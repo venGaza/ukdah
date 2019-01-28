@@ -129,6 +129,8 @@ $ npm start
 - [SQLite3](https://www.npmjs.com/package/sqlite3) - Asynchronous, non-blocking SQLite3 bindings for Node.js
 - [Morgan](https://expressjs.com/en/resources/middleware/morgan.html) - HTTP request logger
 - [Cookie-Parser](https://expressjs.com/en/resources/middleware/cookie-parser.html)- Parse cookie header and populate req.cookies. See also cookies and keygrip
+- [Path](https://nodejs.org/api/path.html) - The path module provides utilities for working with file and directory paths.
+- [Body-Parser](https://www.npmjs.com/package/body-parser) - Node.js body parsing middleware.
 
 ## Application Structure
 
