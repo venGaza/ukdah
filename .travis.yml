@@ -10,4 +10,3 @@ branches:
   - dev
   except:
   - test
-
