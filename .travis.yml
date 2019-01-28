@@ -1,0 +1,15 @@
+# Initial config
+language: node_js
+node_js: '11' # or another
+cache: npm
+
+# Branches
+branches:
+  only:
+  - master
+  - dev
+  except:
+  - test
+
+script:
+  - npm start
