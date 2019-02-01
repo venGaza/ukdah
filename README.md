@@ -18,6 +18,7 @@ Awards play a critical role in recognizing employee accomplishments and boosting
   - [Download the Project (Command Line)](#download-the-project-command-line)
   - [Install](#install)
   - [Run](#run)
+  - [Run with Docker](#run-with-docker)
   - [Persistence (via PM2)](#persistence-via-pm2)
   - [Errors](#errors)
 - [Dependencies & Middleware](#dependencies--middleware)
@@ -40,11 +41,9 @@ These instructions will get you a copy of the project up and running on your loc
 
 What things you need to install the software and how to install them
 
-```
-node
-npm
-git
-```
+  - [Node](https://nodejs.org/en/download/)
+  - [Git](https://git-scm.com/) 
+  - [Docker(Optional)](https://www.docker.com/)
 
 ### Download the Project (Command Line)
 
@@ -74,7 +73,13 @@ $ npm start
 
 or
 
-# Specify port (PORT var will persist until shell is closed)
+# Specify port(PORT var will persist until shell is closed)
+
+#Windows
+$ set PORT=<desiredPort>
+$ npm start
+
+#MacOS
 $ export PORT=<desiredPort>
 $ npm start
 
@@ -85,20 +90,65 @@ $ npm start
 # To stop the process use the keyboard interrupt ^c
 ```
 
+### Run with Docker
+
+If you would like to run this application using Docker, run the following commands:
+
+```bash
+#Build the image from the dockerfile
+docker build --tag=<NameOfApp> .  #Do not forget the period at the end!!! This references the directory.
+
+#Run the app inside the image container
+docker run -d -p <desiredPort>:3000 <NameOfApp>
+
+#Example
+docker run -d -p 3000:3000 ukdah
+```
+
+When you are finished running the app, you can run the following command to stop the container:
+
+```bash
+#Stop container
+docker container stop <NameOfApp>
+
+#Example
+docker container stop ukdah
+```
+
+Looking to scale the application with docker services? Try running the docker-compose file which by default will launch 5 replicas of Ukdah (let that employee recognition rain down): 
+
+```bash
+#Start the swarm
+docker swarm init
+
+#Start the service
+docker stack deploy -c docker-compose.yml <NameOfApp>
+
+#Stop the service and the swarm
+docker stack rm <NameOfApp>
+docker swarm leave --force
+```
+
 ### Persistence (via PM2)
 
 PM2 is a process kept in the background, a daemon, that takes care of all your running processes. If you wish to give the web application persistence, run the following command to start the pm2 daemon:
 
 ```bash
-# Start the PM2 daemon
-$ node_module/pm2/bin/pm2 start npm --name <NameOfApp> -- start
+# Start the PM2 daemon (< npm 5)
+$ node_modules/.bin/pm2 start npm --name <NameOfApp> -- start
+
+# Start the PM2 daemon (> npm 5)
+$ npx pm2 start npm --name <NameOfApp> -- start
 ```
 
 To stop the daemon run the following command:
 
 ```bash
 # Stop the PM2 daemon
-$ node_module/pm2/bin/pm2 stop <NameOfApp>
+$ node_modules/.bin/pm2 stop <NameOfApp>
+
+# Stop the PM2 daemon (> npm 5)
+$ npx pm2 stop <NameOfApp>
 ```
 
 ### Errors
@@ -139,6 +189,7 @@ $ npm start
 - `config/` - This folder contains configuration for passport as well as a central location for configuration/environment variables.
 - `routes/` - This folder contains the route definitions for our web application.
 - `views/` - This folder contains the layout of the webpages. 
+- `models/` - This folder represents data, implements business logic and handles storage.
 - `package.json` - File contains project dependency information for npm installs.
 - `package-lock.json` - automatically generated for any operations where npm modifies either the node_modules tree, or package.json. 
 - `public/` - Holds static assets such at CSS, JS, and images. 
@@ -155,6 +206,7 @@ $ npm start
 * [nodeJS](https://nodejs.org/en/) - Node.js® is a JavaScript runtime built on Chrome's V8 JavaScript engine.
 * [expressJS](https://expressjs.com/) - Express is a minimal and flexible Node.js web application framework that provides a robust set of features for web and mobile applications.
 * [SQLite](https://www.sqlite.org/index.html) - SQLite is a C-language library that implements a small, fast, self-contained, high-reliability, full-featured, SQL database engine. 
+* [Docker](https://www.docker.com/) - Docker provides container software that is ideal for developers and teams looking to get started and experimenting with container-based applications. 
 
 ## Authors
 
