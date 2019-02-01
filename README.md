@@ -92,7 +92,7 @@ $ npm start
 
 ### Run with Docker
 
-If you would like to run this application using Docker, run the following commands:
+If you would like to run this application using Docker, run the following commands from within the Ukdah directory:
 
 ```bash
 #Build the image from the dockerfile
