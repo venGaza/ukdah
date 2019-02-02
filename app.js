@@ -3,9 +3,8 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-var sqlite3 = require('sqlite3').verbose();
+var sqlite3 = require('./models/dbcon.js');
 var helmet = require('helmet');
-var path = require('path');
 var bodyParser = require('body-parser');
 
 var indexRouter = require('./routes/index');
@@ -13,9 +12,23 @@ var usersRouter = require('./routes/users');
 
 var app = express();
 
+//DB Practice
+let sql = `SELECT * FROM employee
+           ORDER BY fname`;
+ 
+sqlite3.db.all(sql, [], (err, rows) => {
+  if (err) {
+    throw err;
+  }
+  rows.forEach((row) => {
+    console.log(row.fname);
+  });
+});
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
+app.set('sqlite3', sqlite3);
 
 app.use(logger('dev'));
 app.use(express.json());
