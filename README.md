@@ -211,7 +211,7 @@ $ npm start
 ## Authors
 
 * **Emmet Cooke** - []()
-* **Dustin Jones** - [venGaza](https://github.com/venGaza)
+* **Dustin Jones** - [venGaza](https://github.com/venGaza) / Contributions: Everything!
 * **Sean Santoki** - []()
 
 ## License
