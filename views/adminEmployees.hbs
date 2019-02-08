@@ -17,8 +17,10 @@
                             <th>First Name</th> 
                             <th>Last Name</th> 
                             <th>Email</th>
+                            {{!-- <th>Password</th>
+                            <th>Region</th> --}}
                             <th></th>
-                            <th></th>  
+                            <th></th>    
                         </thead> 
                         
                         <tbody> 
@@ -28,6 +30,8 @@
                                 <td>{{First_Name}}</td> 
                                 <td>{{Last_Name}}</td> 
                                 <td>{{Email}}</td>
+                                {{!-- <td>{{Password}}</td>
+                                <td>{{Region}}</td>> --}}
                                 <td><button class="button small primary" onclick="deleteUser({{Patient_ID}})">Delete</button></td>
                                 <td><a href="/user/{{Patient_ID}}">Update</a></td>
                             </tr>
@@ -35,6 +39,51 @@
                         </tbody>
                     </table>
 
+                    <section>
+                        <h4>Add user</h4>
+                        <form method="post" action="#">
+                            <div class="row gtr-uniform">
+                                <div class="col-4 col-12-xsmall">
+                                    <input type="text" name="demo-name" id="demo-name" value="" placeholder="First Name" />
+                                </div>
+                                <div class="col-4 col-12-xsmall">
+                                    <input type="text" name="demo-name" id="demo-name" value="" placeholder="Last Name" />
+                                </div>
+                                <div class="col-4 col-12-xsmall">
+                                    <input type="email" name="demo-email" id="demo-email" value="" placeholder="Email" />
+                                </div>
+                                <div class="col-6 col-12-xsmall">
+                                    <input type="email" name="demo-email" id="demo-email" value="" placeholder="Password" />
+                                </div>
+                                <div class="col-6 col-12-xsmall"">
+                                    <select name="user-region" id="user-region">
+                                        <option value="">- Region -</option>
+                                        <option value="1">Manufacturing</option>
+                                        <option value="1">Shipping</option>
+                                        <option value="1">Administration</option>
+                                        <option value="1">Human Resources</option>
+                                    </select>
+                                </div>
+                                <div class="col-4 col-12-small">
+                                    <input type="radio" id="user-type-user" name="user-type" checked>
+                                    <label for="user-type-user">User</label>
+                                </div>
+                                <div class="col-4 col-12-small">
+                                    <input type="radio" id="user-type-admin" name="user-type">
+                                    <label for="user-type-admin">Admin</label>
+                                </div>
+                                <div class="col-4 col-12-small">
+                                    Signature <input type="file" id="user-signature" name="signature" accept="image/*">
+                                </div>
+                                <div class="col-12">
+                                    <ul class="actions">
+                                        <li><input type="submit" value="Add User" class="primary" /></li>
+                                        <li><input type="reset" value="Reset" /></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </form>
+                    </section>
                 </div>
             </section>
         </article>
