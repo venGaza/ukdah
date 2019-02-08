@@ -1,4 +1,4 @@
-![Alt text](public/images/banner.jpg?raw=true "Ukdah | Employee Recognition Portal")
+![Alt text](public/images/readme/banner.jpg?raw=true "Ukdah | Employee Recognition Portal")
 
 <p align="center"> 
 <a href="https://travis-ci.com/venGaza/ukdah"><img src="https://img.shields.io/travis/com/venGaza/ukdah/master.svg?label=Build%20%28Master%29&style=for-the-badge" alt="npm version"></a>
@@ -198,7 +198,7 @@ $ npm start
 ## Database
 This project leverages an embedded database, SQLite, as opposed to the client-server model.  It writes all information to a database file in the models folder instead of making use of the memory function. The data manipulation queries have also been included if you wish to edit the design. Below is the entity relationship diagram for the current database file:  
 
-![Alt text](public/images/ukdahERD.png?raw=true "Entity Relationship Diagram")
+![Alt text](public/images/readme/ukdahERD.png?raw=true "Entity Relationship Diagram")
 
 ## Authentication
 
@@ -216,7 +216,7 @@ This project leverages an embedded database, SQLite, as opposed to the client-se
 
 ## Authors
 
-* **Emmet Cooke** - []()
+* **Emmet Cooke** - [emmCooke]()
 * **Dustin Jones** - [venGaza](https://github.com/venGaza)
 * **Sean Santoki** - [santokis](https://github.com/santokis)
 
