@@ -136,9 +136,11 @@ PM2 is a process kept in the background, a daemon, that takes care of all your r
 
 ```bash
 # Start the PM2 daemon (< npm 5)
+$ export PORT=<desiredPortNum> #or for Windows $ set PORT=<desiredPortNum> 
 $ node_modules/.bin/pm2 start npm --name <NameOfApp> -- start
 
 # Start the PM2 daemon (> npm 5)
+$ export PORT=<desiredPortNum>
 $ npx pm2 start npm --name <NameOfApp> -- start
 ```
 
@@ -216,7 +218,7 @@ This project leverages an embedded database, SQLite, as opposed to the client-se
 
 ## Authors
 
-* **Emmet Cooke** - [emmCooke]()
+* **Emmet Cooke** - []()
 * **Dustin Jones** - [venGaza](https://github.com/venGaza)
 * **Sean Santoki** - [santokis](https://github.com/santokis)
 
