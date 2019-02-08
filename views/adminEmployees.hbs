@@ -11,35 +11,40 @@
             </header>
             <section class="wrapper style5">
                 <div class="inner">
-                    <table>
-                        <thead class="thead-dark text-center">
-                            <th>User ID </th> 
-                            <th>First Name</th> 
-                            <th>Last Name</th> 
-                            <th>Email</th>
-                            {{!-- <th>Password</th>
-                            <th>Region</th> --}}
-                            <th></th>
-                            <th></th>
-                            <th></th>      
-                        </thead> 
-                        
-                        <tbody> 
-                            {{#each users}}
-                            <tr> 
-                                <td>{{User_ID}}</td> 
-                                <td>{{First_Name}}</td> 
-                                <td>{{Last_Name}}</td> 
-                                <td>{{Email}}</td>
-                                {{!-- <td>{{Password}}</td>
-                                <td>{{Region}}</td>> --}}
-                                <td><button class="button small primary" onclick="deleteUser({{Patient_ID}})">Delete</button></td>
-                                <td><a href="/user/{{empID}}">Update</a></td>
-                                <td><a href="/user/{{empID}}">Employees</a></td>
-                            </tr>
-                            {{/each}}  
-                        </tbody>
-                    </table>
+                    
+                    <h4>Users</h4>
+                    <div class="table-wrapper">
+                        <table class="alt"> 
+                            <thead class="thead-dark text-center">
+                                <th>User ID </th> 
+                                <th>First Name</th> 
+                                <th>Last Name</th> 
+                                <th>Email</th>
+                                {{!-- <th>Password</th>
+                                <th>Region</th> --}}
+                                <th></th>
+                                <th></th>
+                                <th></th>      
+                            </thead> 
+                            
+                            <tbody> 
+                                {{#each users}}
+                                <tr> 
+                                    <td>{{User_ID}}</td> 
+                                    <td>{{First_Name}}</td> 
+                                    <td>{{Last_Name}}</td> 
+                                    <td>{{Email}}</td>
+                                    {{!-- <td>{{Password}}</td>
+                                    <td>{{Region}}</td>> --}}
+                                    <td><button class="button small primary" onclick="deleteUser({{Patient_ID}})">Delete</button></td>
+                                    <td><a href="/user/{{empID}}">Update</a></td>
+                                    <td><a href="/user/{{empID}}">Employees</a></td>
+                                </tr>
+                                {{/each}}  
+                            </tbody>
+                        </table>
+                    </div>
+                
 
                     <section>
                         <h4>Add user</h4>
