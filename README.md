@@ -23,6 +23,7 @@ Awards play a critical role in recognizing employee accomplishments and boosting
   - [Errors](#errors)
 - [Dependencies & Middleware](#dependencies--middleware)
 - [Application Structure](#application-structure)
+- [Database](#database)
 - [Authentication](#authentication)
 - [Certificate Generation](#certificate-generation)
 - [Business Intelligence Analytics](#business-intelligence-analytics)
@@ -192,7 +193,12 @@ $ npm start
 - `models/` - This folder represents data, implements business logic and handles storage.
 - `package.json` - File contains project dependency information for npm installs.
 - `package-lock.json` - automatically generated for any operations where npm modifies either the node_modules tree, or package.json. 
-- `public/` - Holds static assets such at CSS, JS, and images. 
+- `public/` - Holds static assets such at CSS, JS, and images.
+
+## Database
+This project leverages an embedded database, SQLite, as opposed to the client-server model.  It writes all information to a database file in the models folder instead of making use of the memory function. The data manipulation queries have also been included if you wish to edit the design. Below is the entity relationship diagram for the current database file:  
+
+![Alt text](public/images/ukdahERD.png?raw=true "Entity Relationship Diagram")
 
 ## Authentication
 
