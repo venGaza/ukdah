@@ -1,27 +1,42 @@
-<h2>Ukdah | Employee Recognition Portal | Employee List </h2>
+<body class="is-preload">
 
-<div class="row table-responsive table table-hover table-striped  table-sm text-center">
-        <table>
-            <thead class="thead-dark text-center">
-                <th>Employee ID </th> 
-                <th>First Name</th> 
-                <th>Last Name</th> 
-                <th>Email</th>
-                <th></th>
-                <th></th>  
-            </thead> 
-            
-            <tbody> 
-                {{#each employees}}
-                <tr> 
-                    <td>{{Employee_ID}}</td> 
-                    <td>{{First_Name}}</td> 
-                    <td>{{Last_Name}}</td> 
-                    <td>{{Email}}</td>
-                    <td><button class="btn-sm btn-outline-danger" onclick="deletePatient({{Patient_ID}})">Delete</button></td>
-                    <td><a href="/patient/{{Patient_ID}}">Update</a></td>
-                </tr>
-                {{/each}}  
-            </tbody>
-        </table>
+    <!-- Page Wrapper -->
+    <div id="page-wrapper">
+
+        <!-- Main -->
+        <article id="main">
+            <header>
+                <h2>Ukdah User List (Admin)</h2>
+                <p>List of users currently in the database</p>
+            </header>
+            <section class="wrapper style5">
+                <div class="inner">
+                    <table>
+                        <thead class="thead-dark text-center">
+                            <th>User ID </th> 
+                            <th>First Name</th> 
+                            <th>Last Name</th> 
+                            <th>Email</th>
+                            <th></th>
+                            <th></th>  
+                        </thead> 
+                        
+                        <tbody> 
+                            {{#each users}}
+                            <tr> 
+                                <td>{{User_ID}}</td> 
+                                <td>{{First_Name}}</td> 
+                                <td>{{Last_Name}}</td> 
+                                <td>{{Email}}</td>
+                                <td><button class="btn-sm btn-outline-danger" onclick="deleteUser({{Patient_ID}})">Delete</button></td>
+                                <td><a href="/user/{{Patient_ID}}">Update</a></td>
+                            </tr>
+                            {{/each}}  
+                        </tbody>
+                    </table>
+
+                </div>
+            </section>
+        </article>
     </div>
+</body>

@@ -7,7 +7,7 @@ function getEmployees(res, sqlite3, sql, context, complete){
             res.write(JSON.stringify(error));
             res.end();
         }
-        context.employees  = results;
+        context.users  = results;
         complete();
     });
 }
@@ -22,7 +22,7 @@ router.get('/',function(req, res, next){
     var callbackCount = 0;
     var context = {};
     var sqlite3 = req.app.get('sqlite3');
-    let sql = `SELECT eID AS Employee_ID, fname AS First_Name, lname AS Last_Name, email AS Email FROM employee`
+    let sql = `SELECT userID AS User_ID, fname AS First_Name, lname AS Last_Name, email AS Email FROM user`
     getEmployees(res, sqlite3, sql, context, complete);
     function complete(){
         callbackCount++;

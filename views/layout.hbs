@@ -1,10 +1,57 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>{{title}}</title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
+	<title>{{title}}</title>
+	<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="css/main.css" />
+		<noscript><link rel="stylesheet" href="css/noscript.css" /></noscript>
   </head>
   <body>
-    {{{body}}}
+		<!-- Header -->
+		<header id="header" class="alt">
+			<h1><a href="index.html">Ukdah</a></h1>
+			<nav id="nav">
+				<ul>
+					<li class="special">
+						<a href="#menu" class="menuToggle"><span>Menu</span></a>
+						<div id="menu">
+							<ul>
+								<li><a href="/">Home</a></li>
+								<li><a href="/generic">Generic</a></li>
+								<li><a href="/admin">Admin (Demo)</a></li>
+								<li><a href="#">Sign Up</a></li>
+								<li><a href="#">Log In</a></li>
+							</ul>
+						</div>
+					</li>
+				</ul>
+			</nav>
+		</header>
+
+		{{{body}}}
+
+		<!-- Footer -->
+		<footer id="footer">
+			<ul class="icons">
+				<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+				<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+				<li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+				<li><a href="#" class="icon fa-dribbble"><span class="label">Dribbble</span></a></li>
+				<li><a href="#" class="icon fa-envelope-o"><span class="label">Email</span></a></li>
+			</ul>
+			<ul class="copyright">
+				<li>Copyright &copy; 2019 Ukdah. All rights reserved. </li>
+			</ul>
+		</footer>
+
+		<!-- Scripts -->
+			<script src="javascripts/jquery.min.js"></script>
+			<script src="javascripts/jquery.scrollex.min.js"></script>
+			<script src="javascripts/jquery.scrolly.min.js"></script>
+			<script src="javascripts/browser.min.js"></script>
+			<script src="javascripts/breakpoints.min.js"></script>
+			<script src="javascripts/util.js"></script>
+			<script src="javascripts/main.js"></script>
   </body>
 </html>
