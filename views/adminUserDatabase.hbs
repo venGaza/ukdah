@@ -1,0 +1,80 @@
+<body class="is-preload">
+
+    <!-- Page Wrapper -->
+    <div id="page-wrapper">
+
+        <!-- Main -->
+        <article id="main">
+            <header>
+                <h2>Ukdah Admin List </h2>
+                <p>List of admins currently in the database</p>
+            </header>
+            <section class="wrapper style5">
+                <div class="inner">
+
+                    <h4>Users</h4>
+                    <div class="table-wrapper">
+                        <table class="alt">
+                            <thead class="thead-dark text-center">
+                                <th>Admin ID </th>
+                                <th>Email</th>
+                                {{!-- <th>Password</th>
+                                <th>Region</th> --}}
+                                <th></th>
+                                <th></th>
+                                <th></th>
+                            </thead>
+
+                            <tbody>
+                                {{#each admin}}
+                                <tr>
+                                    <td>{{Admin_ID}}</td>
+                                    <td>{{Email}}</td>
+                                    {{!-- <td>{{Password}}</td>
+                                    <td>{{Region}}</td>> --}}
+                                    <td><button class="button small primary"
+                                            onclick="deleteUser({{Patient_ID}})">Delete</button></td>
+                                    <td><a href="/user/{{empID}}">Update</a></td>
+                                </tr>
+                                {{/each}}
+                            </tbody>
+                        </table>
+                    </div>
+
+
+                    <section>
+                        <h4>Add user</h4>
+                        <form method="post" action="#">
+                            <div class="row gtr-uniform">
+                                <div class="col-4 col-12-xsmall">
+                                    <input type="email" name="demo-email" id="demo-email" value=""
+                                        placeholder="Email" />
+                                </div>
+                                <div class="col-6 col-12-xsmall">
+                                    <input type="email" name="demo-email" id="demo-email" value=""
+                                        placeholder="Password" />
+                                </div>
+                                <div class="col-6 col-12-xsmall"">
+                                    <select name=" user-region" id="user-region">
+                                    <option value="">- Region -</option>
+                                    <option value="1">Manufacturing</option>
+                                    <option value="1">Shipping</option>
+                                    <option value="1">Administration</option>
+                                    <option value="1">Human Resources</option>
+                                    </select>
+                                </div>
+
+                                <div class="col-12">
+                                    <ul class="actions">
+                                        <li><input type="submit" value="Add Admin" class="primary" /></li>
+                                        <li><input type="reset" value="Reset" /></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </form>
+                    </section>
+                </div>
+            </section>
+        </article>
+    </div>
+</body>
