@@ -7,13 +7,13 @@ var sqlite3 = require('./models/dbcon.js');
 var helmet = require('helmet');
 var bodyParser = require('body-parser');
 
-
 // route variables
 var indexRouter = require('./routes/index');
 var generic = require('./routes/generic');
 var usersRouter = require('./routes/users');
 var adminRouter = require('./routes/adminIndex');
 var adminEmployeesRouter = require('./routes/adminEmployees');
+var login = require('./routes/login'); //ss021119
 
 var app = express();
 
@@ -51,6 +51,7 @@ app.use('/generic', generic);
 app.use('/users', usersRouter);
 app.use('/admin', adminRouter);
 app.use('/adminEmployees', adminEmployeesRouter);
+app.use('/login', login); //ss021119
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
