@@ -9,44 +9,54 @@ function isEmpty (obj) {
     return true;
 }
 
-/* GET home page. */
-router.get('/', function(req, res, next) {
-	res.render('login', { 
-		title: 'login' 
-	});
+//login form
+router.get('/', function(req, res) {
+	res.render('login');
 });
 
-//post request
-router.post('/', function(req, res, next) {
+//login process
+router.post('/', function(req, res) {
 	var sqlite3 = req.app.get('sqlite3');
-	var newUser = {
-		email: req.body.email,
-		password: req.body.password
-	}
+	var email = req.body.email;
+	var password = req.body.password;
 
-	//console.log(newUser);
-	console.log(newUser.email);
-	console.log(newUser.password);
+	console.log(email);
+	console.log(password);
 
-	//let sql = `SELECT [userID], [email]`;
-	let sql = `SELECT [userID]`;
-	sql += `FROM user WHERE email=?`;
+	//email query
+	let query = `SELECT * `;
+	query += `FROM user `;
+	query += `WHERE email='` + email + `' `;
+	query += `AND userPass='` + password + `' `;
 
-	sqlite3.db.all(sql, [newUser.email], (error, results) => {
-		if (error) {
-            results.write(JSON.stringify(error));
-            results.end();
-        } else if (isEmpty(results)) { //
+	console.log(query);
+
+	sqlite3.db.all(query, [], (errors, rows) => {
+		if (errors) {
+			throw errors;
+            res.render('login', {errors:errors});
+        } else if (isEmpty(rows)) {
         	console.log("Email not found");
+        	res.render('login');
         } else {
         	console.log("Email found");
-        	console.log(results);
+        	global.fname = rows[0].fname;
+        	global.lname = rows[0].lname;
+        	global.email = rows[0].email;
+        	global.date = rows[0].userDate;
+        	res.redirect('/userIndex');
+        	
+        	//var string = encodeURIComponent(email);
+        	//res.redirect('/userIndex/?valid=' + string);
         }
-
-		//console.log(results[0].userID);
 	});
-	
-	sqlite3.db.close()
 });
+
+/*
+router.get('/userIndex', function(req, res) {
+	res.render('userIndex');
+	console.log(req.email);
+})
+*/
 
 module.exports = router;

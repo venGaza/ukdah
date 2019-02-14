@@ -13,11 +13,14 @@ var generic = require('./routes/generic');
 var usersRouter = require('./routes/users');
 var adminRouter = require('./routes/adminIndex');
 var adminEmployeesRouter = require('./routes/adminEmployees');
-var login = require('./routes/login'); //ss021119
+var createAccount = require('./routes/createAccount');
+var login = require('./routes/login');
+var userIndex = require('./routes/userIndex');
 
 var app = express();
 
 //DB Practice
+/*
 let sql = `SELECT * FROM employee
            ORDER BY fname`;
  
@@ -29,6 +32,7 @@ sqlite3.db.all(sql, [], (err, rows) => {
     console.log(row.fname);
   });
 });
+*/
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -51,7 +55,9 @@ app.use('/generic', generic);
 app.use('/users', usersRouter);
 app.use('/admin', adminRouter);
 app.use('/adminEmployees', adminEmployeesRouter);
-app.use('/login', login); //ss021119
+app.use('/createAccount', createAccount);
+app.use('/login', login);
+app.use('/userIndex', userIndex);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

@@ -7,4 +7,5 @@ let db = new sqlite3.Database('./models/ukdah.db', sqlite3.OPEN_READWRITE, (err)
     }
     console.log('Connected to the Ukdah database.');
 });
+
 module.exports.db = db;

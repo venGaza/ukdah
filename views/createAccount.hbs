@@ -7,17 +7,15 @@
         <article id="main">
             <header>
                 <h2>Create Account</h2>
-                <!-- <p>Welcome to Ukdah administrator!</p> -->
             </header>
             <section class="wrapper style5">
                 <div class="inner">
                     <section>
-                        <p>Create Account</p>
-                        <form id="createAccountForm">
-                            <b>Username:</b><input type="text" name="username"><br>
-                            <b>Password:</b><input type="text" name="password"><br>
-                            <b>Email:</b><input type="text" name="email"><br>
-                            <b>Signature:</b><input type="file" accept="image/*"><br><br>
+                        <form method="POST">
+                            <b>Username:</b><input type="text" name="username" required><br>
+                            <b>Password:</b><input type="password" name="password" required><br>
+                            <b>Email:</b><input type="text" name="email" required><br>
+                            <!--<b>Signature:</b><input type="file" accept="image/*"><br><br>-->
                             <input type="submit">
                         </form>
                         
