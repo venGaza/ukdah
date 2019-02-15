@@ -55,7 +55,7 @@ CREATE TABLE user (
     lname varchar(255) NOT NULL,
 	email varchar(255) NOT NULL,
 	userPass varchar(255) NOT NULL,
-    userDate datetime NOT NULL,
+    userDate datetime DEFAULT current_timestamp NOT NULL,
     userSig blob,
     userTypeID integer NOT NULL,
     regID integer NOT NULL,

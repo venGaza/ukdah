@@ -23,6 +23,19 @@ function getRegions(res, sqlite3, sql, context, complete){
     });
 }
 
+function getUserTypes(res, sqlite3, sql, context, complete){
+    sqlite3.db.all(sql, [], (error, results) => {
+        if(error){
+            res.write(JSON.stringify(error));
+            res.end();
+        }
+        context.userType = results;
+        complete();
+    });
+}
+
+
+
 /*GET all employees currently in the database*/
 router.get('/',function(req, res, next){
     var callbackCount = 0;
@@ -30,11 +43,13 @@ router.get('/',function(req, res, next){
     var sqlite3 = req.app.get('sqlite3');
     let sql = `SELECT userID AS User_ID, fname AS First_Name, lname AS Last_Name, email AS Email FROM user`
     let sql2 = `SELECT regID, regName FROM region`
+    let sql3 = `SELECT userTypeID FROM userTypeID`
     getEmployees(res, sqlite3, sql, context, complete);
     getRegions(res, sqlite3, sql2, context, complete);
+    getUserTypes(res, sqlite3, sql3, context, complete);
     function complete(){
         callbackCount++;
-        if(callbackCount >= 2){
+        if(callbackCount >= 3){
             res.render('adminEmployees', context);
         }
     }
@@ -42,9 +57,10 @@ router.get('/',function(req, res, next){
 
 /*Adds a user to the database*/
 router.post('/', function(req, res){
+    var date = new Date();
     var sqlite3 = req.app.get('sqlite3');
-    var sql = `INSERT INTO user (fname, lname, email, ins, txdate, doctor) VALUES (?, ?, ?, ?, ?, ?)`;
-    var inserts = [req.body.fname, req.body.lname, req.body.pnum, req.body.insurance, req.body.txdate, req.body.doctor];
+    var sql = `INSERT INTO user (fname, lname, email, userPass, userTypeID, regID, userSig, userDate) VALUES (?, ?, ?, ?, ?, ?, ?, ?)`;
+    var inserts = [req.body.fname, req.body.lname, req.body.email, req.body.password, req.body.userType, req.body.region, req.body.sig, date.getTime()];
     sqlite3.db.run(sql, inserts, function(err) {
         if (err) {
           return console.log(err.message);

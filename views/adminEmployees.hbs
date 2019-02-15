@@ -44,7 +44,6 @@
                             </tbody>
                         </table>
                     </div>
-                
 
                     <section>
                         <h4>Add user</h4>
@@ -60,10 +59,10 @@
                                     <input type="email" name="email" id="email" value="" placeholder="Email" />
                                 </div>
                                 <div class="col-6 col-12-xsmall">
-                                    <input type="email" name="password" id="password" value="" placeholder="Password" />
+                                    <input type="password" name="password" id="password" value="" placeholder="Password" />
                                 </div>
                                 <div class="col-6 col-12-xsmall"">
-                                    <select name="user-region" id="user-region">
+                                    <select name="region" id="region">
                                         <option value="">- Region -</option>
                                         {{#each regions}}
                                             <option value="{{regID}}">{{regName}}</option>
@@ -71,15 +70,15 @@
                                     </select>
                                 </div>
                                 <div class="col-4 col-12-small">
-                                    <input type="radio" id="user-type-user" name="user-type" checked>
+                                    <input type="radio" id="user-type-user" value={{userType.0.userTypeID}} name="userType" checked>
                                     <label for="user-type-user">User</label>
                                 </div>
                                 <div class="col-4 col-12-small">
-                                    <input type="radio" id="user-type-admin" name="user-type">
+                                    <input type="radio" id="user-type-admin" value={{userType.1.userTypeID}} name="userType">
                                     <label for="user-type-admin">Admin</label>
                                 </div>
                                 <div class="col-4 col-12-small">
-                                    Signature <input type="file" id="userSignature" name="userSignature" accept="image/*">
+                                    Signature <input type="file" id="sig" name="sig" accept="image/*">
                                 </div>
                                 <div class="col-12">
                                     <ul class="actions">
