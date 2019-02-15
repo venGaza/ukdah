@@ -17,28 +17,37 @@ router.get('/', function(req, res) {
 //register process
 router.post('/', function(req, res) {
 	var sqlite3 = req.app.get('sqlite3');
-	var username = req.body.username;
-	var password = req.body.password;
 	var email = req.body.email;
+	var fname = req.body.fname;
+	var lname = req.body.lname;
+    var password = req.body.password;
+    var date = new Date();
+    var signature = '?';
+    var type = 1;
+    var region = 1;
 
-	//check if email exists
-	let query = `SELECT * `;
-	query += `FROM user `;
-	query += `WHERE email='` + email + `'`;
+    console.log(date);
 
-	console.log(query);
+    let query = `INSERT INTO user `;
+    query += `VALUES(?,`;
+    query += `'` + fname + `',`;
+    query += `'` + lname + `',`;
+    query += `'` + email + `',`;
+    query += `'` + password + `',`;
+    query += `'` + date + `',`;
+    query += `'` + signature + `',`;
+    query += `'` + type + `',`;
+    query += `'` + region + `')`;
 
-	sqlite3.db.all(query, [], (errors, rows) => {
+    console.log(query);
+
+    sqlite3.db.run(query, [], (errors, rows) => {
 		if (errors) {
 			throw errors;
             res.render('createAccount', {errors:errors});
-        } else if (isEmpty(rows)) {
-        	console.log("Valid");
-        	//res.render('login');
-        	//perform insert
         } else {
-        	console.log("Email exists");
-        	res.render('createAccount');
+        	console.log("insert successful");
+        	res.redirect('/login');
         }
 	});
 })
