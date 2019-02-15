@@ -10,6 +10,7 @@ var bodyParser = require('body-parser');
 // route variables
 var indexRouter = require('./routes/index');
 var generic = require('./routes/generic');
+var elements = require('./routes/elements');
 var usersRouter = require('./routes/users');
 var adminRouter = require('./routes/adminIndex');
 var adminEmployeesRouter = require('./routes/adminEmployees');
@@ -52,12 +53,14 @@ app.use(bodyParser.json());
 // views
 app.use('/', indexRouter);
 app.use('/generic', generic);
+app.use('/elements', elements);
 app.use('/users', usersRouter);
 app.use('/admin', adminRouter);
 app.use('/adminEmployees', adminEmployeesRouter);
 app.use('/createAccount', createAccount);
 app.use('/login', login);
 app.use('/userIndex', userIndex);
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

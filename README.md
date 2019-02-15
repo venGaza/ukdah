@@ -218,7 +218,7 @@ This project leverages an embedded database, SQLite, as opposed to the client-se
 
 ## Authors
 
-* **Emmet Cooke** - []()
+* **Emmet Cooke** - [emmCooke](https://github.com/emmCooke)
 * **Dustin Jones** - [venGaza](https://github.com/venGaza)
 * **Sean Santoki** - [santokis](https://github.com/santokis)
 
