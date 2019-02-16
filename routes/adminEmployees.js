@@ -34,8 +34,6 @@ function getUserTypes(res, sqlite3, sql, context, complete){
     });
 }
 
-
-
 /*GET all employees currently in the database*/
 router.get('/',function(req, res, next){
     var callbackCount = 0;

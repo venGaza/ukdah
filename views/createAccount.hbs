@@ -10,15 +10,52 @@
             </header>
             <section class="wrapper style5">
                 <div class="inner">
+                    
+
                     <section>
-                        <form method="POST">
-                            <b>Email:</b><input type="text" name="email" required><br>
-                            <b>First Name:</b><input type="text" name="fname" required><br>
-                            <b>Last Name:</b><input type="text" name="lname" required><br>
-                            <b>Password:</b><input type="password" name="password" required><br>
-                            <!--<b>Signature:</b><input type="file" accept="image/*"><br><br>-->
-                            <input type="submit">
-                        </form> 
+                        <h4>Sign-up</h4>
+                        <form method="post" action="/createAccount">
+                            <div class="row gtr-uniform">
+                                <div class="col-4 col-12-xsmall">
+                                    <input type="text" name="fname" id="fname" value="" placeholder="First Name" />
+                                </div>
+                                <div class="col-4 col-12-xsmall">
+                                    <input type="text" name="lname" id="lname" value="" placeholder="Last Name" />
+                                </div>
+                                <div class="col-4 col-12-xsmall">
+                                    <input type="email" name="email" id="email" value="" placeholder="Email" />
+                                </div>
+                                <div class="col-6 col-12-xsmall">
+                                    <input type="password" name="password" id="password" value="" placeholder="Password" />
+                                </div>
+                                <div class="col-6 col-12-xsmall"">
+                                    <select name="region" id="region">
+                                        <option value="">- Region -</option>
+                                        {{#each regions}}
+                                            <option value="{{regID}}">{{regName}}</option>
+                                        {{/each}}
+                                    </select>
+                                </div>
+                                <div class="col-4 col-12-small">
+                                    <input type="radio" id="user-type-user" value={{userType.0.userTypeID}} name="type" checked>
+                                    <label for="user-type-user">User</label>
+                                </div>
+                                <div class="col-4 col-12-small">
+                                    <input type="radio" id="user-type-admin" value={{userType.0.userTypeID}} name="type">
+                                    <label for="user-type-admin">Admin</label>
+                                </div>
+                                <div class="col-4 col-12-small">
+                                    Signature <input type="file" id="sig" name="sig" accept="image/*">
+                                </div>
+                                <div class="col-12">
+                                    <ul class="actions">
+                                        <li><input type="submit" value="Continue" class="primary" /></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </form>
+
+                        <p>Already have an account? <a href="/login">Login here</a></p>
                     </section>
                 </div>
             </section>
