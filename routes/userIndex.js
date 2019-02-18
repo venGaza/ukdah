@@ -20,6 +20,11 @@ router.get('/', function(req, res) {
         Email: global.email,
         Date: global.date
     });
+
+    console.log("Globals");
+    console.log(global.fname);
+    console.log(global.lname);
+    console.log(global.email);
     /*
 	var sqlite3 = req.app.get('sqlite3');
 	var callbackCount = 0;

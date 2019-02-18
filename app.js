@@ -17,6 +17,7 @@ var adminEmployeesRouter = require('./routes/adminEmployees');
 var createAccount = require('./routes/createAccount');
 var login = require('./routes/login');
 var userIndex = require('./routes/userIndex');
+var userSettings = require('./routes/userSettings');
 
 var app = express();
 
@@ -60,7 +61,7 @@ app.use('/adminEmployees', adminEmployeesRouter);
 app.use('/createAccount', createAccount);
 app.use('/login', login);
 app.use('/userIndex', userIndex);
-
+app.use('/userSettings', userSettings);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
