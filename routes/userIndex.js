@@ -14,38 +14,18 @@ function getUserInfo(res, sqlite3, sql, context, complete){
 }
 
 router.get('/', function(req, res) {
-	res.render('userIndex',{
-        First_Name: global.fname,
-        Last_Name: global.lname,
-        Email: global.email,
-        Date: global.date
-    });
-
-    console.log("Globals");
-    console.log(global.fname);
-    console.log(global.lname);
-    console.log(global.email);
-    /*
-	var sqlite3 = req.app.get('sqlite3');
-	var callbackCount = 0;
-    var context = {};
-    let query = `SELECT [fname] AS First_Name FROM user WHERE email=?`;
-
-
-    let sql = `SELECT [fname] AS First_Name`;
-	sql += `FROM user WHERE userID=?`;
-    getUserInfo(res, sqlite3, sql, context, complete);
-    */
-    /*
-    var context = {First_Name: BLAH};
-    function complete(){
-        callbackCount++;
-        if(callbackCount >= 1){
-            res.render('userIndex', context);
-        }
+    if (global.email) {
+        console.log("session");
+        res.render('userIndex',{
+            First_Name: global.fname,
+            Last_Name: global.lname,
+            Email: global.email,
+            Date: global.date
+        });
+    } else {
+        console.log("session not valid");
+        res.redirect('/login');
     }
-    */
-	//sqlite3.db.close();
 });
 
 module.exports = router;

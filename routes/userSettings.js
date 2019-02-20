@@ -2,11 +2,13 @@ var express = require('express');
 var router = express.Router();
 
 router.get('/', function(req, res) {
-	res.render('userSettings');
-	console.log("Globals");
-    console.log(global.fname);
-    console.log(global.lname);
-    console.log(global.email);
+    if (global.email) {
+        console.log("session");
+        res.render('userSettings');
+    } else {
+        console.log("session not valid");
+        res.redirect('/login');
+    }
 });
 
 router.post('/', function(req, res) {
@@ -21,7 +23,6 @@ router.post('/', function(req, res) {
 	console.log(email);
 	console.log(oldPassword);
 	console.log(newPassword);
-
 
 	let query = `UPDATE user `;
     query += `SET fname='` + fname + `',`;

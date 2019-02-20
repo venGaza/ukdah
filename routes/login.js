@@ -45,18 +45,8 @@ router.post('/', function(req, res) {
         	global.email = rows[0].email;
         	global.date = rows[0].userDate;
         	res.redirect('/userIndex');
-        	
-        	//var string = encodeURIComponent(email);
-        	//res.redirect('/userIndex/?valid=' + string);
         }
 	});
 });
-
-/*
-router.get('/userIndex', function(req, res) {
-	res.render('userIndex');
-	console.log(req.email);
-})
-*/
 
 module.exports = router;
