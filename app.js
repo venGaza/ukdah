@@ -22,21 +22,6 @@ var createAward = require('./routes/createAward');
 
 var app = express();
 
-//DB Practice
-/*
-let sql = `SELECT * FROM employee
-           ORDER BY fname`;
- 
-sqlite3.db.all(sql, [], (err, rows) => {
-  if (err) {
-    throw err;
-  }
-  rows.forEach((row) => {
-    console.log(row.fname);
-  });
-});
-*/
-
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');

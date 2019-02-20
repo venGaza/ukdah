@@ -20,9 +20,6 @@ router.post('/', function(req, res) {
 	var email = req.body.email;
 	var password = req.body.password;
 
-	console.log(email);
-	console.log(password);
-
 	//email query
 	let query = `SELECT * `;
 	query += `FROM user `;
@@ -43,6 +40,7 @@ router.post('/', function(req, res) {
         	global.fname = rows[0].fname;
         	global.lname = rows[0].lname;
         	global.email = rows[0].email;
+            global.userPass = rows[0].userPass;
         	global.date = rows[0].userDate;
         	res.redirect('/userIndex');
         }
