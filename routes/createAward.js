@@ -7,16 +7,16 @@ function checkUserType(res, sqlite3, sql, adminUser){
             res.write(JSON.stringify(error));
             res.end();
         } else if (results[0].userTypeID == adminUser) {
-        	console.log("admin user");
-            res.render('adminIndex');
+        	console.log("admin user, unable to access awards");
+        	res.redirect('/userIndex');
         } else {
-            console.log("normal user, unable to access admin console");
-            res.redirect('/userIndex');
+            console.log("normal user");
+            res.render('createAward');
         }
     });
 }
 
-router.get('/', function(req, res, next) {
+router.get('/', function(req, res) {
 	//assume session is valid
 	var sqlite3 = req.app.get('sqlite3');
 	var adminUser = 2;

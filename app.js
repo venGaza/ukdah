@@ -21,7 +21,10 @@ var indexRouter = require('./routes/index'),
     adminEmployeesRouter = require('./routes/adminEmployees'),
     createAccount = require('./routes/createAccount'),
     login = require('./routes/login'),
-    userIndex = require('./routes/userIndex');
+    userIndex = require('./routes/userIndex'),
+    userSettings = require('./routes/userSettings'),
+    createAward = require('./routes/createAward');
+
 
 //  application variable
 var app = express();
@@ -69,6 +72,8 @@ app.use('/adminEmployees', adminEmployeesRouter);
 app.use('/createAccount', createAccount);
 app.use('/login', login);
 app.use('/userIndex', userIndex);
+app.use('/userSettings', userSettings);
+app.use('/createAward', createAward);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

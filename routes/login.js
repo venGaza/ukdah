@@ -11,7 +11,17 @@ function isEmpty (obj) {
 
 //login form
 router.get('/', function(req, res) {
-	res.render('login');
+    if (global.email) {
+        console.log("session");
+        global.email = "";
+        global.fname = "";
+        global.lname = "";
+        global.date = "";
+        res.redirect('/');
+    } else {
+        console.log("no session");
+        res.render('login');
+    }
 });
 
 //login process
@@ -19,9 +29,6 @@ router.post('/', function(req, res) {
 	var sqlite3 = req.app.get('sqlite3');
 	var email = req.body.email;
 	var password = req.body.password;
-
-	console.log(email);
-	console.log(password);
 
 	//email query
 	let query = `SELECT * `;
@@ -43,20 +50,11 @@ router.post('/', function(req, res) {
         	global.fname = rows[0].fname;
         	global.lname = rows[0].lname;
         	global.email = rows[0].email;
+            global.userPass = rows[0].userPass;
         	global.date = rows[0].userDate;
         	res.redirect('/userIndex');
-        	
-        	//var string = encodeURIComponent(email);
-        	//res.redirect('/userIndex/?valid=' + string);
         }
 	});
 });
-
-/*
-router.get('/userIndex', function(req, res) {
-	res.render('userIndex');
-	console.log(req.email);
-})
-*/
 
 module.exports = router;
