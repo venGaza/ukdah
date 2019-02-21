@@ -1,11 +1,15 @@
-var createError = require('http-errors');
-var express = require('express');
-var path = require('path');
-var cookieParser = require('cookie-parser');
-var logger = require('morgan');
-var sqlite3 = require('./models/dbcon.js');
-var helmet = require('helmet');
-var bodyParser = require('body-parser');
+var createError = require('http-errors'),
+    express = require('express'),
+    path = require('path'),
+    cookieParser = require('cookie-parser'),
+    logger = require('morgan'),
+    sqlite3 = require('./models/dbcon.js'),
+    helmet = require('helmet'),
+    bodyParser = require('body-parser'),
+    passport = require('passport'),
+    LocalStrategy = require('passport-local').Strategy,
+    bcrypt = require('bcrypt'),
+    session = require('express-session');
 
 // route variables
 var indexRouter = require('./routes/index');
