@@ -11,7 +11,17 @@ function isEmpty (obj) {
 
 //login form
 router.get('/', function(req, res) {
-	res.render('login');
+    if (global.email) {
+        console.log("session");
+        global.email = "";
+        global.fname = "";
+        global.lname = "";
+        global.date = "";
+        res.redirect('/');
+    } else {
+        console.log("no session");
+        res.render('login');
+    }
 });
 
 //login process
