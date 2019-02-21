@@ -1,3 +1,4 @@
+// module variables
 var createError = require('http-errors'),
     express = require('express'),
     path = require('path'),
@@ -12,38 +13,25 @@ var createError = require('http-errors'),
     session = require('express-session');
 
 // route variables
-var indexRouter = require('./routes/index');
-var generic = require('./routes/generic');
-var elements = require('./routes/elements');
-var usersRouter = require('./routes/users');
-var adminRouter = require('./routes/adminIndex');
-var adminEmployeesRouter = require('./routes/adminEmployees');
-var createAccount = require('./routes/createAccount');
-var login = require('./routes/login');
-var userIndex = require('./routes/userIndex');
+var indexRouter = require('./routes/index'),
+    generic = require('./routes/generic'),
+    elements = require('./routes/elements'),
+    usersRouter = require('./routes/users'),
+    adminRouter = require('./routes/adminIndex'),
+    adminEmployeesRouter = require('./routes/adminEmployees'),
+    createAccount = require('./routes/createAccount'),
+    login = require('./routes/login'),
+    userIndex = require('./routes/userIndex');
 
+//  application variable
 var app = express();
-
-//DB Practice
-/*
-let sql = `SELECT * FROM employee
-           ORDER BY fname`;
- 
-sqlite3.db.all(sql, [], (err, rows) => {
-  if (err) {
-    throw err;
-  }
-  rows.forEach((row) => {
-    console.log(row.fname);
-  });
-});
-*/
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
 app.set('sqlite3', sqlite3);
 
+//  middlewares
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -53,6 +41,23 @@ app.use(helmet());
 app.use('/static', express.static(path.join(__dirname, 'public')));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
+passport.use(new LocalStrategy({
+  usernameField: 'email',
+  passwordField: 'password'
+  },
+  function(username, password, done) {
+    User.findOne({ username: username }, function(err, user) {
+      if (err) { return done(err); }
+      if (!user) {
+        return done(null, false, { message: 'Incorrect username.' });
+      }
+      if (!user.validPassword(password)) {
+        return done(null, false, { message: 'Incorrect password.' });
+      }
+      return done(null, user);
+    });
+  }
+));
 
 // views
 app.use('/', indexRouter);
@@ -64,7 +69,6 @@ app.use('/adminEmployees', adminEmployeesRouter);
 app.use('/createAccount', createAccount);
 app.use('/login', login);
 app.use('/userIndex', userIndex);
-
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
