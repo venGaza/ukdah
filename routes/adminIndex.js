@@ -17,15 +17,21 @@ function checkUserType(res, sqlite3, sql, adminUser){
 }
 
 router.get('/', function(req, res, next) {
-	//assume session is valid
-	var sqlite3 = req.app.get('sqlite3');
-	var adminUser = 2;
+	if (global.email) {
+        console.log("session");
+        res.render('adminIndex');
+        var sqlite3 = req.app.get('sqlite3');
+        var adminUser = 2;
 
-	let query = `SELECT userTypeID `;
-	query += `FROM user `;
-	query += `WHERE email='` + global.email + `'`;
+        let query = `SELECT userTypeID `;
+        query += `FROM user `;
+        query += `WHERE email='` + global.email + `'`;
 
-	checkUserType(res, sqlite3, query, adminUser);
+        checkUserType(res, sqlite3, query, adminUser);
+    } else {
+        console.log("session not valid");
+        res.redirect('/login');
+    }
 });
 
 module.exports = router;
