@@ -28,10 +28,10 @@ router.get('/', function(req, res) {
         query += `WHERE email='` + global.email + `'`;
 
         checkUserType(res, sqlite3, query, adminUser);
-        } else {
-            console.log("session not valid");
-            res.redirect('/login');
-        }
+    } else {
+        console.log("session not valid");
+        res.redirect('/login');
+    }
 });
 
 router.post('/', function(req, res) {
