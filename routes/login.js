@@ -51,8 +51,12 @@ router.post('/', function(req, res) {
         	global.lname = rows[0].lname;
         	global.email = rows[0].email;
             global.userPass = rows[0].userPass;
-        	global.date = rows[0].userDate;
-        	res.redirect('/userIndex');
+            global.date = rows[0].userDate;
+            if (rows[0].userTypeID == 1) {
+                res.redirect('/userIndex');
+            } else {
+                res.redirect('/admin');
+            }    
         }
 	});
 });

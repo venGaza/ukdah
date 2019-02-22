@@ -10,7 +10,8 @@ var createError = require('http-errors'),
     passport = require('passport'),
     LocalStrategy = require('passport-local').Strategy,
     bcrypt = require('bcrypt'),
-    session = require('express-session');
+    session = require('express-session'),
+    sequelize = require('sequelize');
 
 // route variables
 var indexRouter = require('./routes/index'),
@@ -25,8 +26,7 @@ var indexRouter = require('./routes/index'),
     userSettings = require('./routes/userSettings'),
     createAward = require('./routes/createAward');
 
-
-//  application variable
+// application variable
 var app = express();
 
 // view engine setup
@@ -44,23 +44,6 @@ app.use(helmet());
 app.use('/static', express.static(path.join(__dirname, 'public')));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
-passport.use(new LocalStrategy({
-  usernameField: 'email',
-  passwordField: 'password'
-  },
-  function(username, password, done) {
-    User.findOne({ username: username }, function(err, user) {
-      if (err) { return done(err); }
-      if (!user) {
-        return done(null, false, { message: 'Incorrect username.' });
-      }
-      if (!user.validPassword(password)) {
-        return done(null, false, { message: 'Incorrect password.' });
-      }
-      return done(null, user);
-    });
-  }
-));
 
 // views
 app.use('/', indexRouter);
