@@ -23,8 +23,8 @@
                     </section>
 
                     <section>
-                    <div style="width:;height:700px;border:2px solid black">
-                        <p style="text-align:center">Preview</p>
+                    <div style="width:;height:;border:2px solid black">
+                        <span class="image fit"><img src="images/EOTW_sample.jpg" alt="" /></span>
                     </div>
                     </section>
 
@@ -32,18 +32,23 @@
                         <form method="post" action="#" style="margin-top:25px">
                             <div class="row gtr-uniform">
                                 <div class="col-4 col-12-xsmall">
-                                    <input type="text" name="" id="" value="" placeholder="First Name" />
+                                    <input type="text" name="fname" id="fname" value="" placeholder="First Name" />
                                 </div>
                                 <div class="col-4 col-12-xsmall">
-                                    <input type="text" name="" id="" value="" placeholder="Last Name" />
+                                    <input type="text" name="lname" id="lname" value="" placeholder="Last Name" />
                                 </div>
                                 <div class="col-4 col-12-xsmall">
-                                    <input type="email" name="" id="" value="" placeholder="Email" />
+                                    <input type="text" name="email" id="email" value="" placeholder="Email" />
                                 </div>
                                 <div class="col-4 col-12-xsmall">
+                                    <input type="text" name="date" id="date" value="" placeholder="Award Date" />
+                                </div>
+                                <!--NOT REQUIRED, implement in view awards page-->
+                                <!--div class="col-4 col-12-xsmall">
                                     <a href=""><button>Select Creator</button></a>
-                                </div>
-                                <div class="col-6 col-12-xsmall"">
+                                </div-->
+                                <!--NOT REQUIRED-->
+                                <!--div class="col-6 col-12-xsmall"">
                                     <select name="user-region" id="user-region">
                                         <option value="">- Region -</option>
                                         <option value="1">Manufacturing</option>
@@ -51,7 +56,7 @@
                                         <option value="1">Administration</option>
                                         <option value="1">Human Resources</option>
                                     </select>
-                                </div>
+                                </div-->
                                 <div class="col-12">
                                     <input type="submit" value="Email Award" class="primary" />
                                 </div>
