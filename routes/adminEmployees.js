@@ -39,7 +39,12 @@ router.get('/',function(req, res, next){
     var callbackCount = 0;
     var context = {};
     var sqlite3 = req.app.get('sqlite3');
-    let sql = `SELECT userID AS User_ID, fname AS First_Name, lname AS Last_Name, email AS Email FROM user`
+    let sql = `SELECT userID AS User_ID, fname ||' '|| lname AS Full_Name, email AS Email, \
+                      userPass AS Password, r.regName AS Region, t.UserType AS User_Type, \
+                      userDate AS Date \
+                FROM user u \
+                INNER JOIN userTypeID t ON t.userTypeID = u.userTypeID \
+                INNER JOIN region r ON r.regID = u.regID` 
     let sql2 = `SELECT regID, regName FROM region`
     let sql3 = `SELECT userTypeID FROM userTypeID`
     getEmployees(res, sqlite3, sql, context, complete);

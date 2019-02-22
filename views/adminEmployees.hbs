@@ -40,11 +40,12 @@
                         <table class="alt"> 
                             <thead class="thead-dark text-center">
                                 <th>User ID </th> 
-                                <th>First Name</th> 
-                                <th>Last Name</th> 
+                                <th>Name</th> 
                                 <th>Email</th>
-                                {{!-- <th>Password</th>
-                                <th>Region</th> --}}
+                                <th>Password</th>
+                                <th>Region</th>
+                                <th>User Type</th>
+                                <th>Created</th>
                                 <th></th>
                                 <th></th>
                                 <th></th>      
@@ -54,11 +55,12 @@
                                 {{#each users}}
                                 <tr> 
                                     <td>{{User_ID}}</td> 
-                                    <td>{{First_Name}}</td> 
-                                    <td>{{Last_Name}}</td> 
-                                    <td>{{Email}}</td>
-                                    {{!-- <td>{{Password}}</td>
-                                    <td>{{Region}}</td>> --}}
+                                    <td>{{Full_Name}}</td> 
+                                    <td>{{Email}}</td> 
+                                    <td>{{Password}}</td>
+                                    <td>{{Region}}</td>
+                                    <td>{{User_Type}}</td>
+                                    <td>{{Date}}</td>
                                     <td><button class="button small primary" onclick="deleteUser({{User_ID}})">Delete</button></td>
                                     <td><a href="/user/{{empID}}">Update</a></td>
                                     <td><a href="/user/{{empID}}">Employees</a></td>
