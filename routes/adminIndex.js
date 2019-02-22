@@ -8,7 +8,7 @@ function checkUserType(res, sqlite3, sql, adminUser){
             res.end();
         } else if (results[0].userTypeID == adminUser) {
         	console.log("admin user");
-            res.render('adminIndex');
+            res.render('adminIndex', {layout: 'layoutAdmin'});
         } else {
             console.log("normal user, unable to access admin console");
             res.redirect('/userIndex');

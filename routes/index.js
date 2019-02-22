@@ -11,7 +11,7 @@ router.get('/', function(req, res, next) {
         var context = {};
   		context.title = 'Ukdah |  Employee recognition portal';
   		context.header = "alt";
-		res.render('index', context)
+		res.render('index', context);
     }
 });
 
