@@ -1,0 +1,48 @@
+<body class="is-preload">
+    <!-- Page Wrapper -->
+    <div id="page-wrapper">
+
+        <!-- Header -->
+		<header id="header" class=''>
+			<h1><a href="/admin">Ukdah</a></h1>
+			<nav id="nav">
+				<ul>
+					<li class="special">
+						<a href="#menu" class="menuToggle"><span>Menu</span></a>
+						<div id="menu">
+							<ul>
+								<li><a href="/admin">Home</a></li>
+                                <li><a href="/adminEmployees">User List</a></li>
+                                <li><a href="/adminAwards">Award List</a></li>
+                                <li><a href="/admin/awardTypes">Award Types</a></li>
+                                <li><a href="/adminBusiness">Analytics</a></li>
+                                <li><a href="/admin/account">Account</a></li>
+								<li><a href="/login">Logout</a></li>
+							</ul>
+						</div>
+					</li>
+				</ul>
+			</nav>
+		</header>
+
+        <!-- Main -->
+        <article id="main">
+            <header>
+                <h2>Admin User Information</h2>
+            </header>
+            <section class="wrapper style5">
+                <div class="inner">
+                    <section>
+                        <b>First Name: </b> {{First_Name}} <br>
+                        <b>Last Name: </b> {{Last_Name}} <br>
+                        <b>Email: </b> {{Email}} <br>
+                        <b>Account Creation Date: </b> {{Date}} <br>
+                        <b>Signature: </b> {{Signature}} <br><br>
+                        <a href="/userSettings" class="button fit">Edit Profile</a><br>
+                        <a href="/login">Logout</a>
+                    </section>
+                </div>
+            </section>
+        </article>
+    </div>
+</body>

@@ -23,6 +23,7 @@ var indexRouter = require('./routes/index'),
     adminAwardTypes = require('./routes/adminAwardTypes'),
     adminEmployeesRouter = require('./routes/adminEmployees'),
     adminBusinessRouter = require('./routes/adminBusiness'),
+    adminAccountRouter = require('./routes/adminAccount'),
     createAccount = require('./routes/createAccount'),
     login = require('./routes/login'),
     userIndex = require('./routes/userIndex'),
@@ -58,6 +59,7 @@ app.use('/admin', adminRouter);
 app.use('/admin/awardTypes', adminAwardTypes);
 app.use('/adminEmployees', adminEmployeesRouter);
 app.use('/adminBusiness', adminBusinessRouter);
+app.use('/admin/account', adminAccountRouter);
 app.use('/createAccount', createAccount);
 app.use('/login', login);
 app.use('/userIndex', userIndex);
