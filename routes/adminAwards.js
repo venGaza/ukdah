@@ -18,14 +18,34 @@ router.get('/',function(req, res, next){
     var callbackCount = 0;
     var context = {};
     var sqlite3 = req.app.get('sqlite3');
-    let sql = `SELECT awardID AS Award_ID, awardName AS Name, awardDesc AS Desc FROM award`; 
+    let sql = `SELECT certID AS Cert_ID, awardDate AS Award_Date, u.fname ||' ' || u.lname AS User_Name, \
+                    a.awardName AS Award_Name, e.fname ||' '|| e.lname AS Employee_Name \
+               FROM userAwards ua \
+               INNER JOIN user u ON ua.userID = u.userID \
+               INNER JOIN award a ON a.awardID = ua.awardID \
+               INNER JOIN employee e ON e.empID = ua.empID`;
     getAwards(res, sqlite3, sql, context, complete);
     function complete(){
         callbackCount++;
         if(callbackCount >= 1){
-            res.render('adminAwardTypes', context);
+            res.render('adminAwards', context);
         }
     }
 });
+
+/* DELETE an award from the database */
+router.delete('/:id', function(req, res){
+    var sqlite3 = req.app.get('sqlite3');
+    let sql = `DELETE FROM userAwards WHERE certID=?`;
+    var id = [req.params.id];
+    sqlite3.db.run(sql, id, function(err) {
+        if (err) {
+          return console.error(err.message);
+        } else{
+            res.status(202).end();
+        }
+        console.log(`Row deleted`);
+    });
+})
 
 module.exports = router;

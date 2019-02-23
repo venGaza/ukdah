@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 
-// Returns all awards 
+// Returns all award types
 function getAwards(res, sqlite3, sql, context, complete){
     sqlite3.db.all(sql, [], (error, results) => {
         if(error){
@@ -13,7 +13,7 @@ function getAwards(res, sqlite3, sql, context, complete){
     });
 }
 
-/* GET all awards currently in the database*/
+/* GET all award types currently in the database*/
 router.get('/',function(req, res, next){
     var callbackCount = 0;
     var context = {};
@@ -28,7 +28,7 @@ router.get('/',function(req, res, next){
     }
 });
 
-/* ADD an award to the database*/
+/* ADD an award type to the database*/
 router.post('/', function(req, res){
     var sqlite3 = req.app.get('sqlite3');
     var sql = `INSERT INTO award (awardName, awardDesc) \
@@ -43,6 +43,21 @@ router.post('/', function(req, res){
         console.log(`A row has been inserted`);
     });
 });
+
+/* DELETE an award type from the database */
+router.delete('/:id', function(req, res){
+    var sqlite3 = req.app.get('sqlite3');
+    let sql = `DELETE FROM award WHERE awardID=?`;
+    var id = [req.params.id];
+    sqlite3.db.run(sql, id, function(err) {
+        if (err) {
+          return console.error(err.message);
+        } else{
+            res.status(202).end();
+        }
+        console.log(`Row deleted`);
+    });
+})
 
 
 module.exports = router;

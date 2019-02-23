@@ -19,8 +19,8 @@ var indexRouter = require('./routes/index'),
     elements = require('./routes/elements'),
     usersRouter = require('./routes/users'),
     adminRouter = require('./routes/adminIndex'),
-    //adminAwardsRouter = require('./routes/adminAwards'),
-    adminAwardTypes = require('./routes/adminAwardTypes'),
+    adminAwardsRouter = require('./routes/adminAwards'),
+    adminAwardTypesRouter = require('./routes/adminAwardTypes'),
     adminEmployeesRouter = require('./routes/adminEmployees'),
     adminBusinessRouter = require('./routes/adminBusiness'),
     adminAccountRouter = require('./routes/adminAccount'),
@@ -55,8 +55,8 @@ app.use('/generic', generic);
 app.use('/elements', elements);
 app.use('/users', usersRouter);
 app.use('/admin', adminRouter);
-//app.use('/admin/awards', adminAwardsRouter);
-app.use('/admin/awardTypes', adminAwardTypes);
+app.use('/admin/awards', adminAwardsRouter);
+app.use('/admin/awardTypes', adminAwardTypesRouter);
 app.use('/adminEmployees', adminEmployeesRouter);
 app.use('/adminBusiness', adminBusinessRouter);
 app.use('/admin/account', adminAccountRouter);

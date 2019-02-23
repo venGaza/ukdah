@@ -14,7 +14,7 @@
 							<ul>
 								<li><a href="/admin">Home</a></li>
                                 <li><a href="/adminEmployees">User List</a></li>
-                                <li><a href="/adminAwards">Award List</a></li>
+                                <li><a href="/admin/awards">Award List</a></li>
                                 <li><a href="/admin/awardTypes">Award Types</a></li>
                                 <li><a href="/adminBusiness">Analytics</a></li>
                                 <li><a href="/admin/account">Account</a></li>
@@ -29,8 +29,8 @@
         <!-- Main -->
         <article id="main">
             <header>
-                <h2>Ukdah Awards(Admin)</h2>
-                <p>List of certificates that have been awarded by users</p>
+                <h2>Ukdah Awards</h2>
+                <p>List of certificates that have been awarded by the users</p>
             </header>
             <section class="wrapper style5">
                 <div class="inner">
@@ -40,18 +40,22 @@
                         <table class="alt"> 
                             <thead class="thead-dark text-center">
                                 <th>Award ID</th> 
-                                <th>Name</th> 
-                                <th>Description</th> 
+                                <th>Awarder</th> 
+                                <th>Employee Awarded</th> 
+                                <th>Award Type</th> 
+                                <th>Award Date</th> 
                                 <th></th>      
                             </thead> 
                             
                             <tbody> 
                                 {{#each awards}}
                                 <tr> 
-                                    <td>{{Award_ID}}</td>
-                                    <td>{{Name}}</td> 
-                                    <td>{{Desc}}</td> 
-                                    <td><button class="button small primary" onclick="deleteAward({{User_ID}})">Delete</button></td>
+                                    <td>{{Cert_ID}}</td>
+                                    <td>{{User_Name}}</td> 
+                                    <td>{{Employee_Name}}</td>
+                                    <td>{{Award_Name}}</td>   
+                                    <td>{{Award_Date}}</td> 
+                                    <td><button class="button small primary" onclick="deleteAward({{Cert_ID}})">Delete</button></td>
                                 </tr>
                                 {{/each}}  
                             </tbody>

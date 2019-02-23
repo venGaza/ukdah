@@ -14,7 +14,7 @@
 							<ul>
 								<li><a href="/admin">Home</a></li>
                                 <li><a href="/adminEmployees">User List</a></li>
-                                <li><a href="/adminAwards">Award List</a></li>
+                                <li><a href="/admin/awards">Award List</a></li>
                                 <li><a href="/admin/awardTypes">Award Types</a></li>
                                 <li><a href="/adminBusiness">Analytics</a></li>
                                 <li><a href="/admin/account">Account</a></li>
@@ -51,7 +51,7 @@
                                     <td>{{Award_ID}}</td>
                                     <td>{{Name}}</td> 
                                     <td>{{Desc}}</td> 
-                                    <td><button class="button small primary" onclick="deleteAward({{User_ID}})">Delete</button></td>
+                                    <td><button class="button small primary" onclick="deleteAwardType({{Award_ID}})">Delete</button></td>
                                 </tr>
                                 {{/each}}  
                             </tbody>
@@ -81,5 +81,5 @@
             </section> 
         </article>
     <div>
-    <script src="/static/javascripts/deleteUser.js"></script>
+    <script src="/static/javascripts/deleteAwardType.js"></script>
 </body>
