@@ -1,0 +1,66 @@
+<body class="is-preload">
+
+    <!-- Page Wrapper -->
+    <div id="page-wrapper">
+
+        <!-- Header -->
+		<header id="header" class=''>
+			<h1><a href="/admin">Ukdah</a></h1>
+			<nav id="nav">
+				<ul>
+					<li class="special">
+						<a href="#menu" class="menuToggle"><span>Menu</span></a>
+						<div id="menu">
+							<ul>
+								<li><a href="/admin">Home</a></li>
+                                <li><a href="/admin/users">User List</a></li>
+                                <li><a href="/admin/awards">Award List</a></li>
+                                <li><a href="/admin/awardTypes">Award Types</a></li>
+                                <li><a href="/admin/business">Analytics</a></li>
+                                <li><a href="/admin/account">Account</a></li>
+								<li><a href="/login">Logout</a></li>
+							</ul>
+						</div>
+					</li>
+				</ul>
+			</nav>
+		</header>
+
+        <!-- Main -->
+        <article id="main">
+            <header>
+                <h2>Employee List for {{employees.0.User_Name}}</h2>
+                <p>Here are the employees in the database</p>
+            </header>
+            <section class="wrapper style5">
+                <div class="inner">
+                    
+                    <h4>Employees</h4>
+                    <div class="table-wrapper">
+                        <table class="alt"> 
+                            <thead class="thead-dark text-center">
+                                <th>Employee ID</th> 
+                                <th>Name</th> 
+                                <th>Email</th> 
+                                <th></th>      
+                            </thead> 
+                            
+                            <tbody> 
+                                {{#each employees}}
+                                <tr> 
+                                    <td>{{Employee_ID}}</td>
+                                    <td>{{Employee_Name}}</td> 
+                                    <td>{{Employee_Email}}</td>
+                                    <td><button class="button small primary" onclick="deleteEmployee({{Employee_ID}})">Delete</button></td>
+                                </tr>
+                                {{/each}}  
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+            </section>
+        </article>
+    <div>
+    <script src="/static/javascripts/deleteEmployee.js"></script>
+</body>
