@@ -1,0 +1,84 @@
+<body class="is-preload">
+
+    <!-- Page Wrapper -->
+    <div id="page-wrapper">
+
+        <!-- Header -->
+		<header id="header" class=''>
+			<h1><a href="/admin">Ukdah</a></h1>
+			<nav id="nav">
+				<ul>
+					<li class="special">
+						<a href="#menu" class="menuToggle"><span>Menu</span></a>
+						<div id="menu">
+							<ul>
+								<li><a href="/admin">Home</a></li>
+                                <li><a href="/adminEmployees">User List</a></li>
+                                <li><a href="/adminAwards">Award List</a></li>
+                                <li><a href="/adminAwardTypes">Award Types</a></li>
+                                <li><a href="/adminBusiness">Analytics</a></li>
+                                <li><a href="/userIndex">Account</a></li>
+								<li><a href="/login">Logout</a></li>
+							</ul>
+						</div>
+					</li>
+				</ul>
+			</nav>
+		</header>
+
+        <!-- Main -->
+        <article id="main">
+            <header>
+                <h2>Update User</h2>
+            </header>
+            <section class="wrapper style5">
+                <div class="inner">
+                    
+                    <section>
+                        <h4>User: {{user.Full_Name}}</h4>
+                        <form id='updateUser' method="post" action="/adminEmployees">
+                            <div class="row gtr-uniform">
+                                <div class="col-4 col-12-xsmall">
+                                    <input type="text" name="fname" id="fname" value="{{user.First_Name}}" placeholder="First Name" />
+                                </div>
+                                <div class="col-4 col-12-xsmall">
+                                    <input type="text" name="lname" id="lname" value="{{user.Last_Name}}" placeholder="Last Name" />
+                                </div>
+                                <div class="col-4 col-12-xsmall">
+                                    <input type="email" name="email" id="email" value="{{user.Email}}" placeholder="Email" />
+                                </div>
+                                <div class="col-6 col-12-xsmall">
+                                    <input type="password" name="password" id="password" value="{{user.Password}}" placeholder="Password" />
+                                </div>
+                                <div class="col-6 col-12-xsmall">
+                                    <select name="region" id="region">
+                                        <option value="">- Region -</option>
+                                        {{#each regions}}
+                                            <option value="{{regID}}">{{regName}}</option>
+                                        {{/each}}
+                                    </select>
+                                </div>
+                                <div class="col-4 col-12-small">
+                                    <input type="radio" id="user-type-user" value={{userType.0.userTypeID}} name="type" checked>
+                                    <label for="user-type-user">User</label>
+                                </div>
+                                <div class="col-4 col-12-small">
+                                    <input type="radio" id="user-type-admin" value={{userType.1.userTypeID}} name="type">
+                                    <label for="user-type-admin">Admin</label>
+                                </div>
+                                <div class="col-4 col-12-small">
+                                    Signature <input type="file" id="sig" name="sig" accept="image/*">
+                                </div>
+                            </div>
+                        </form>
+
+                        <button onclick="updateUser({{user.User_ID}})">Update</button>
+
+                    </section>
+                </div>
+            </section>
+        </article>
+    </div>
+    <script defer>selectRegion({{user.User_ID}});</script>
+    <script defer>selectType({{user.User_ID}});</script>
+</body>
