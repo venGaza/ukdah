@@ -1,6 +1,6 @@
 function deleteUser(id){
     $.ajax({
-        url: '/adminEmployees/' + id,
+        url: '/admin/users/' + id,
         type: 'DELETE',
         success: function(result){
             window.location.reload(true);

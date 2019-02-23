@@ -69,7 +69,7 @@ router.get('/',function(req, res, next){
     function complete(){
         callbackCount++;
         if(callbackCount >= 3){
-            res.render('adminEmployees', context);
+            res.render('adminUsers', context);
         }
     }
 });
@@ -111,7 +111,7 @@ router.post('/', function(req, res){
         if (err) {
           return console.log(err.message);
         } else{
-            res.redirect('/adminEmployees');
+            res.redirect('/admin/users');
         }
         console.log(`A row has been inserted`);
     });

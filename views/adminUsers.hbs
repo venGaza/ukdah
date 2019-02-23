@@ -13,7 +13,7 @@
 						<div id="menu">
 							<ul>
 								<li><a href="/admin">Home</a></li>
-                                <li><a href="/adminEmployees">User List</a></li>
+                                <li><a href="/admin/users">User List</a></li>
                                 <li><a href="/admin/awards">Award List</a></li>
                                 <li><a href="/admin/awardTypes">Award Types</a></li>
                                 <li><a href="/admin/business">Analytics</a></li>
@@ -61,7 +61,7 @@
                                     <td>{{Region}}</td>
                                     <td>{{User_Type}}</td>
                                     <td>{{Date}}</td>
-                                    <td><a href="/adminEmployees/{{User_ID}}">Update</a></td>
+                                    <td><a href="/admin/users/{{User_ID}}">Update</a></td>
                                     <td><a href="/user/{{empID}}">Employees</a></td>
                                     <td><button class="button small primary" onclick="deleteUser({{User_ID}})">Delete</button></td>
                                 </tr>
@@ -72,7 +72,7 @@
 
                     <section>
                         <h4>Add user</h4>
-                        <form method="post" action="/adminEmployees">
+                        <form method="post" action="/admin/users">
                             <div class="row gtr-uniform">
                                 <div class="col-4 col-12-xsmall">
                                     <input type="text" name="fname" id="fname" value="" placeholder="First Name" />
