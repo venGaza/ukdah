@@ -58,7 +58,7 @@ app.use('/admin', adminRouter);
 app.use('/admin/awards', adminAwardsRouter);
 app.use('/admin/awardTypes', adminAwardTypesRouter);
 app.use('/adminEmployees', adminEmployeesRouter);
-app.use('/adminBusiness', adminBusinessRouter);
+app.use('/admin/business', adminBusinessRouter);
 app.use('/admin/account', adminAccountRouter);
 app.use('/createAccount', createAccount);
 app.use('/login', login);
