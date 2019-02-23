@@ -114,7 +114,7 @@ router.post('/', function(req, res){
             res.redirect('/adminEmployees');
         }
         console.log(`A row has been inserted`);
-      });
+    });
 });
 
 /* Updates user information */
@@ -131,7 +131,7 @@ router.put('/:id', function(req, res){
             res.status(200);
             res.end();
         }
-      });
+    });
 });
 
 /* DELETE a user from the database */
