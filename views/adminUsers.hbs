@@ -34,13 +34,16 @@
             </header>
             <section class="wrapper style5">
                 <div class="inner">
-                    <ul class="actions">
+                    <i><a href="/admin" class="icon fa-arrow-left"><span class="label">Go to admin home page</span> Back to admin home</a></i>
+                    <br><br><br>
+
+                    <ul class="actions special">
                         <li><a href="#addUser" class="button">Add User</a></li>
 					</ul>
 
                     <h4>Users</h4>
                     <div class="table-wrapper">
-                        <table class="alt"> 
+                        <table class="fixed_header alt"> 
                             <thead class="thead-dark text-center">
                                 {{!-- <th>ID</th>  --}}
                                 <th>Name</th>
@@ -74,7 +77,7 @@
                             </tbody>
                         </table>
                     </div>
-
+                    
                     <section>
                         <h4>Add user</h4>
                         <form method="post" action="/admin/users" id="addUser">
