@@ -58,8 +58,27 @@
                         </table>
                     </div>
 
+                    <section>
+                        <h4>Add award type</h4>
+                        <form method="post" action="/admin/awardTypes">
+                            <div class="row gtr-uniform">
+                                <div class="col-8 col-12-xsmall">
+                                    <input type="text" name="name" id="name" value="" placeholder="Award Title" />
+                                </div>
+                                <div class="col-12">
+                                    <textarea name="description" id="description" placeholder="Enter your award description" rows="6"></textarea>
+                                    </div>
+                                <div class="col-12">
+                                    <ul class="actions">
+                                        <li><input type="submit" value="Create Award" class="primary" /></li>
+                                        <li><input type="reset" value="Reset" /></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </form>
+                    </section>
                 </div>
-            </section>
+            </section> 
         </article>
     <div>
     <script src="/static/javascripts/deleteUser.js"></script>
