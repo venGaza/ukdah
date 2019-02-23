@@ -119,8 +119,8 @@ router.post('/', function(req, res){
 router.put('/:id', function(req, res){
     var date = new Date();
     var sqlite3 = req.app.get('sqlite3');
-    var sql = `UPDATE user SET fname=?, lname=?, email=?, userPass=?, regID=?, userDate=? WHERE userID = ?`;
-    var inserts = [req.body.fname, req.body.lname, req.body.email, req.body.password, req.body.region, date, req.params.id];
+    var sql = `UPDATE user SET fname=?, lname=?, email=?, userPass=?, regID=?, userTypeID=?, userDate=? WHERE userID = ?`;
+    var inserts = [req.body.fname, req.body.lname, req.body.email, req.body.password, req.body.region, req.body.type, date, req.params.id];
     sqlite3.db.run(sql, inserts, function(err) {
         if(err){
             res.write(JSON.stringify(error));
