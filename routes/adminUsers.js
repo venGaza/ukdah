@@ -81,11 +81,9 @@ router.get('/:id',function(req,res, next){
     context.jsscripts = ["updateUser.js", "selectedRegion.js", "selectedType.js"];
     var sqlite3 = req.app.get('sqlite3');
     let sql = `SELECT userID AS User_ID, fname ||' '|| lname AS Full_Name, email AS Email, \
-                      userPass AS Password, r.regName AS Region, t.UserType AS User_Type, \
+                      userPass AS Password, regID AS Region, userTypeID AS Type, \
                       userDate AS Date, u.fname AS First_Name, u.lname AS Last_Name \
                 FROM user u \
-                INNER JOIN userTypeID t ON t.userTypeID = u.userTypeID \
-                INNER JOIN region r ON r.regID = u.regID
                 WHERE userID = ?`; 
     let sql2 = `SELECT regID, regName FROM region`;
     let sql3 = `SELECT userTypeID FROM userTypeID`;
@@ -122,9 +120,9 @@ router.put('/:id', function(req, res){
     var date = new Date();
     var sqlite3 = req.app.get('sqlite3');
     var sql = `UPDATE user SET fname=?, lname=?, email=?, userPass=?, regID=?, userDate=? WHERE userID = ?`;
-    var inserts = [req.body.fname, req.body.lname, req.body.email, req.body.password, req.body.region, date.getTime(), req.params.id];
-    sqlite3.db.run(`UPDATE user SET fname=? WHERE userID=1`, ['Greg'], function(err) {
-        if(error){
+    var inserts = [req.body.fname, req.body.lname, req.body.email, req.body.password, req.body.region, date, req.params.id];
+    sqlite3.db.run(sql, inserts, function(err) {
+        if(err){
             res.write(JSON.stringify(error));
             res.end();
         }else{

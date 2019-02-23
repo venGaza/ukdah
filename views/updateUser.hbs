@@ -13,7 +13,7 @@
 						<div id="menu">
 							<ul>
 								<li><a href="/admin">Home</a></li>
-                                <li><a href="/adminEmployees">User List</a></li>
+                                <li><a href="/admin/users">User List</a></li>
                                 <li><a href="/adminAwards">Award List</a></li>
                                 <li><a href="/adminAwardTypes">Award Types</a></li>
                                 <li><a href="/adminBusiness">Analytics</a></li>
@@ -79,6 +79,6 @@
             </section>
         </article>
     </div>
-    <script defer>selectRegion({{user.User_ID}});</script>
-    <script defer>selectType({{user.User_ID}});</script>
+    <script defer>selectRegion({{user.Region}});</script>
+    <script defer>selectType({{user.Type}});</script>
 </body>
