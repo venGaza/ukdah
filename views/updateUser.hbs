@@ -33,7 +33,9 @@
             </header>
             <section class="wrapper style5">
                 <div class="inner">
-                    
+                    <i><a href="/admin/users" class="icon fa-arrow-left"><span class="label">Go back to users list</span> Back to users list</a></i>
+                    <br><br><br>
+
                     <section>
                         <h4>User: {{user.Full_Name}}</h4>
                         <form id='updateUser' method="post" action="/adminEmployees">
@@ -72,7 +74,11 @@
                             </div>
                         </form>
 
-                        <button onclick="updateUser({{user.User_ID}})">Update</button>
+                        <ul class="actions special">
+					        <li><button class="button primary" onclick="updateUser({{user.User_ID}})">Update</button></li>
+				        </ul>
+
+                        
 
                     </section>
                 </div>

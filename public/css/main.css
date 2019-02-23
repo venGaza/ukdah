@@ -4151,6 +4151,7 @@ body.is-preload #banner2:after {
 	}
 
 	body.is-mobile.landing #banner,
+	body.is-mobile.landing #banner2,
 	body.is-mobile.landing .wrapper.style4 {
 		background-image: -moz-linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("../../images/banner.jpg");
 		background-image: -webkit-linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("../../images/banner.jpg");
@@ -4163,4 +4164,13 @@ body.is-preload #banner2:after {
 
 	body.is-mobile.landing #footer {
 		background-color: #1d242a;
+	}
+
+	/* Icon Colors */
+	.fa-trash {
+		color: rgb(194, 12, 12);
+	}
+
+	.fa-users {
+	color: #065763;
 	}
