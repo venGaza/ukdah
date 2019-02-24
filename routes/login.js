@@ -28,7 +28,9 @@ router.get('/', function(req, res) {
 router.post('/', function(req, res) {
 	var sqlite3 = req.app.get('sqlite3');
 	var email = req.body.email;
-	var password = req.body.password;
+    var password = req.body.password;
+    var context = {};
+    context.error = "Incorrect username or password";
 
 	//email query
 	let query = `SELECT * `;
@@ -44,7 +46,7 @@ router.post('/', function(req, res) {
             res.render('login', {errors:errors});
         } else if (isEmpty(rows)) {
         	console.log("Email not found");
-        	res.render('login');
+        	res.render('login', context);
         } else {
         	console.log("Email found");
         	global.fname = rows[0].fname;

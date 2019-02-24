@@ -4178,3 +4178,7 @@ body.is-preload #banner2:after {
 	.fa-trophy {
 		color: #f8b735;
 	}
+
+	#errMessage {
+		color: #ff0000;
+	}
