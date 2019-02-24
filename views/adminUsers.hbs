@@ -34,49 +34,41 @@
             </header>
             <section class="wrapper style5">
                 <div class="inner">
-                    <i><a href="/admin" class="icon fa-arrow-left"><span class="label">Go to admin home page</span> Back to admin home</a></i>
+                    <i><a href="/admin" class="icon fa-arrow-left"><span class="label">Go to Admin home page</span> Back to Admin Home</a></i>
                     <br><br><br>
-
-                    <ul class="actions special">
-                        <li><a href="#addUser" class="button">Add User</a></li>
-					</ul>
 
                     <h4>Users</h4>
                     <div class="table-wrapper">
-                        <table class="fixed_header alt"> 
-                            <thead class="thead-dark text-center">
-                                {{!-- <th>ID</th>  --}}
+                        <table class="alt" id="scrollyTable"> 
+                            <thead class="">
                                 <th>Name</th>
-                                <th></th> 
+                                <th>Emp</th> 
+                                <th></th>  
                                 <th>Email</th>
                                 <th>Password</th>
                                 <th>Region</th>
                                 <th>Type</th>
-                                <th>Created</th>
-                                
-                                {{!-- <th></th> --}}
-                                <th></th>      
+                                <th>Created</th>    
                             </thead> 
                             
                             <tbody> 
                                 {{#each users}}
                                 <tr> 
-                                    {{!-- <td>{{User_ID}}</td>  --}}
                                     <td><a title="Edit user" href="/admin/users/{{User_ID}}">{{Full_Name}}</a></td> 
                                     <td><a href="/admin/employees/{{User_ID}}"><i title="Employee List" class="fa fa-users fa-lg"></i></a></td>
+                                    <td><a href="#"><i title="Delete user" class="fa fa-trash fa-lg" onclick="deleteUser({{User_ID}})"></i></a></td>
                                     <td>{{Email}}</td> 
                                     <td>{{Password}}</td>
                                     <td>{{Region}}</td>
                                     <td>{{User_Type}}</td>
-                                    <td>{{Date}}</td>
-                                    {{!-- <td><a href="/admin/users/{{User_ID}}">Update</a></td> --}}
-                                    
-                                    <td><a href="#"><i title="Delete user" class="fa fa-trash fa-lg" onclick="deleteUser({{User_ID}})"></i></a></td>
+                                    <td>{{Date}}</td> 
                                 </tr>
                                 {{/each}}  
                             </tbody>
                         </table>
                     </div>
+
+                    <br><br>
                     
                     <section>
                         <h4>Add user</h4>

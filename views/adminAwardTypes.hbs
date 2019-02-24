@@ -39,7 +39,7 @@
                     
                     <h4>Award Types</h4>
                     <div class="table-wrapper">
-                        <table class="alt"> 
+                        <table class="alt" id="scrollyTable"> 
                             <thead class="thead-dark text-center">
                                 <th>Award ID</th> 
                                 <th>Name</th> 
@@ -53,12 +53,14 @@
                                     <td>{{Award_ID}}</td>
                                     <td>{{Name}}</td> 
                                     <td>{{Desc}}</td> 
-                                    <td><button class="button small primary" onclick="deleteAwardType({{Award_ID}})">Delete</button></td>
+                                    <td><a href="#"><i title="Delete user" class="fa fa-trash fa-lg" onclick="deleteUser({{Award_ID}})"></i></a></td>
                                 </tr>
                                 {{/each}}  
                             </tbody>
                         </table>
                     </div>
+
+                    <br>
 
                     <section>
                         <h4>Add award type</h4>

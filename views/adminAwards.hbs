@@ -39,7 +39,7 @@
                     
                     <h4>Awards</h4>
                     <div class="table-wrapper">
-                        <table class="alt"> 
+                        <table class="alt" id="scrollyTable"> 
                             <thead class="thead-dark text-center">
                                 <th>Award ID</th> 
                                 <th>Awarder</th> 
@@ -57,7 +57,7 @@
                                     <td>{{Employee_Name}}</td>
                                     <td>{{Award_Name}}</td>   
                                     <td>{{Award_Date}}</td> 
-                                    <td><button class="button small primary" onclick="deleteAward({{Cert_ID}})">Delete</button></td>
+                                    <td><a href="#"><i title="Delete user" class="fa fa-trash fa-lg" onclick="deleteUser({{Cert_ID}})"></i></a></td>
                                 </tr>
                                 {{/each}}  
                             </tbody>

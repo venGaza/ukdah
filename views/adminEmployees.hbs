@@ -39,7 +39,7 @@
                     
                     <h4>Employees</h4>
                     <div class="table-wrapper">
-                        <table class="alt"> 
+                        <table class="alt" id="scrollyTable"> 
                             <thead class="thead-dark text-center">
                                 <th>Employee ID</th> 
                                 <th>Name</th> 
@@ -53,7 +53,7 @@
                                     <td>{{Employee_ID}}</td>
                                     <td>{{Employee_Name}}</td> 
                                     <td>{{Employee_Email}}</td>
-                                    <td><button class="button small primary" onclick="deleteEmployee({{Employee_ID}})">Delete</button></td>
+                                    <td><a href="#"><i title="Delete user" class="fa fa-trash fa-lg" onclick="deleteUser({{Employee_ID}})"></i></a></td>
                                 </tr>
                                 {{/each}}  
                             </tbody>

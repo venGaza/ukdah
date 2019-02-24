@@ -100,8 +100,8 @@ input, select, textarea {
 			-ms-transition: none !important;
 			transition: none !important;
 		}
-
-	body, input, select, textarea {
+/* Removed input */
+	body, select, textarea {
 		color: #fff;
 		font-family: "Open Sans", Helvetica, sans-serif;
 		font-size: 15pt;
@@ -4168,19 +4168,9 @@ body.is-preload #banner2:after {
 
 	/* Icon Colors */
 	.fa-trash {
-		color: rgb(194, 12, 12);
+		color: rgb(255, 0, 0);
 	}
 
 	.fa-users {
-	color: #065763;
+	color: #1d242a;
 	}
-
-	.fixed_header tbody{
-		display:block;
-		overflow:auto;
-		height:400px;
-		width:100%;
-	  }
-	  .fixed_header thead tr{
-		display:block;
-	  }
