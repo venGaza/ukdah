@@ -13,7 +13,7 @@ function getAwards(res, sqlite3, sql, context, complete){
     });
 }
 
-// Returns all awards 
+// Returns awards given by specific user 
 function getUserAwards(res, sqlite3, sql, inserts, context, complete){
     sqlite3.db.all(sql, inserts, (error, results) => {
         if(error){
@@ -45,7 +45,7 @@ router.get('/',function(req, res, next){
     }
 });
 
-/* GET all awards currently in the database*/
+/* GET all awards given by a single user*/
 router.get('/:id',function(req, res, next){
     var callbackCount = 0;
     var context = {};
