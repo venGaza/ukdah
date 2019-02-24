@@ -13,6 +13,18 @@ function getAwards(res, sqlite3, sql, context, complete){
     });
 }
 
+// Returns all awards 
+function getUserAwards(res, sqlite3, sql, inserts, context, complete){
+    sqlite3.db.all(sql, inserts, (error, results) => {
+        if(error){
+            res.write(JSON.stringify(error));
+            res.end();
+        }
+        context.awards  = results;
+        complete();
+    });
+}
+
 /* GET all awards currently in the database*/
 router.get('/',function(req, res, next){
     var callbackCount = 0;
@@ -25,6 +37,28 @@ router.get('/',function(req, res, next){
                INNER JOIN award a ON a.awardID = ua.awardID \
                INNER JOIN employee e ON e.empID = ua.empID`;
     getAwards(res, sqlite3, sql, context, complete);
+    function complete(){
+        callbackCount++;
+        if(callbackCount >= 1){
+            res.render('adminAwards', context);
+        }
+    }
+});
+
+/* GET all awards currently in the database*/
+router.get('/:id',function(req, res, next){
+    var callbackCount = 0;
+    var context = {};
+    var sqlite3 = req.app.get('sqlite3');
+    let sql = `SELECT certID AS Cert_ID, awardDate AS Award_Date, u.fname ||' ' || u.lname AS User_Name, \
+                    a.awardName AS Award_Name, e.fname ||' '|| e.lname AS Employee_Name \
+               FROM userAwards ua \
+               INNER JOIN user u ON ua.userID = u.userID \
+               INNER JOIN award a ON a.awardID = ua.awardID \
+               INNER JOIN employee e ON e.empID = ua.empID
+               WHERE ua.userID = ?`;
+    let inserts = [req.params.id];
+    getUserAwards(res, sqlite3, sql, inserts, context, complete);
     function complete(){
         callbackCount++;
         if(callbackCount >= 1){

@@ -42,7 +42,8 @@
                         <table class="alt" id="scrollyTable"> 
                             <thead class="">
                                 <th>Name</th>
-                                <th>Emp</th> 
+                                <th></th> 
+                                <th></th>  
                                 <th></th>  
                                 <th>Email</th>
                                 <th>Password</th>
@@ -55,8 +56,9 @@
                                 {{#each users}}
                                 <tr> 
                                     <td><a title="Edit user" href="/admin/users/{{User_ID}}">{{Full_Name}}</a></td> 
-                                    <td><a href="/admin/employees/{{User_ID}}"><i title="Employee List" class="fa fa-users fa-lg"></i></a></td>
-                                    <td><a href="#"><i title="Delete user" class="fa fa-trash fa-lg" onclick="deleteUser({{User_ID}})"></i></a></td>
+                                    <td><a href="/admin/employees/{{User_ID}}"><i title="Employee List for {{Full_Name}}" class="fa fa-users fa-lg"></i></a></td>
+                                    <td><a href="/admin/awards/{{User_ID}}"><i title="Awards given by {{Full_Name}}" class="fa fa-trophy fa-lg"></i></a></td>
+                                    <td><a href="#"><i title="Delete {{Full_Name}} permanently" class="fa fa-trash fa-lg" onclick="deleteUser({{User_ID}})"></i></a></td>
                                     <td>{{Email}}</td> 
                                     <td>{{Password}}</td>
                                     <td>{{Region}}</td>
