@@ -79,7 +79,8 @@ VALUES
     ('Tom', 'Brady', 'emailTom@gmail.com', 'password', current_timestamp, 1, 5),
     ('Bill', 'Belichek', 'emailBill@gmail.com', 'password', current_timestamp, 1, 6),
     ('Jared', 'Goff', 'emailJared@gmail.com', 'password', current_timestamp, 1, 7),
-    ('admin', 'account', 'admin', 'admin', current_timestamp, 2, 8);
+    ('admin', 'account', 'admin', 'admin', current_timestamp, 2, 8),
+    ('user', 'user', 'user', 'user', current_timestamp, 1, 8);
 
 --
 -- Table structure for table employee

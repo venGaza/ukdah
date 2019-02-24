@@ -102,9 +102,9 @@ router.get('/:id',function(req,res, next){
 router.post('/', function(req, res){
     var date = new Date();
     var sqlite3 = req.app.get('sqlite3');
-    var sql = `INSERT INTO user (fname, lname, email, userPass, userTypeID, regID, userSig, userDate) \
-               VALUES (?, ?, ?, ?, ?, ?, ?, ?)`;
-    var inserts = [req.body.fname, req.body.lname, req.body.email, req.body.password, req.body.userType, req.body.region, req.body.sig, date.getTime()];
+    var sql = `INSERT INTO user (fname, lname, email, userPass, userTypeID, regID, userSig) \
+               VALUES (?, ?, ?, ?, ?, ?, ?)`;
+    var inserts = [req.body.fname, req.body.lname, req.body.email, req.body.password, req.body.userType, req.body.region, req.body.sig];
     sqlite3.db.run(sql, inserts, function(err) {
         if (err) {
           return console.log(err.message);
@@ -119,11 +119,11 @@ router.post('/', function(req, res){
 router.put('/:id', function(req, res){
     var date = new Date();
     var sqlite3 = req.app.get('sqlite3');
-    var sql = `UPDATE user SET fname=?, lname=?, email=?, userPass=?, regID=?, userTypeID=?, userDate=? WHERE userID = ?`;
-    var inserts = [req.body.fname, req.body.lname, req.body.email, req.body.password, req.body.region, req.body.type, date, req.params.id];
+    var sql = `UPDATE user SET fname=?, lname=?, email=?, userPass=?, regID=?, userTypeID=? WHERE userID = ?`;
+    var inserts = [req.body.fname, req.body.lname, req.body.email, req.body.password, req.body.region, req.body.type, req.params.id];
     sqlite3.db.run(sql, inserts, function(err) {
         if(err){
-            res.write(JSON.stringify(error));
+            res.write(JSON.stringify(err));
             res.end();
         }else{
             res.status(200);

@@ -40,10 +40,10 @@
                                         <div class="col-12 col-12-xsmall">
                                             <input type="email" name="email" id="email" value="" placeholder="Email" />
                                         </div>
-                                        <div class="col-6 col-12-xsmall">
+                                        <div class="col-12 col-12-xsmall">
                                             <input type="password" name="password" id="password" value="" placeholder="Password" />
                                         </div>
-                                        <div class="col-6 col-12-xsmall">
+                                        <div class="col-12 col-12-xsmall">
                                             <select name="region" id="region">
                                                 <option value="">- Region -</option>
                                                 {{#each regions}}
@@ -51,20 +51,20 @@
                                                 {{/each}}
                                             </select>
                                         </div>
-                                        <div class="col-4 col-12-small">
+                                        <div class="col-3 col-12-small">
                                             <input type="radio" id="user-type-user" value={{userType.0.userTypeID}} name="type" checked>
                                             <label for="user-type-user">User</label>
                                         </div>
-                                        <div class="col-4 col-12-small">
+                                        <div class="col-3 col-12-small">
                                             <input type="radio" id="user-type-admin" value={{userType.0.userTypeID}} name="type">
                                             <label for="user-type-admin">Admin</label>
                                         </div>
-                                        <div class="col-4 col-12-small">
+                                        <div class="col-6 col-12-small">
                                             <input type="file" id="sig" name="sig" accept="image/*">
                                         </div>
                                         <div class="col-12">
                                             <ul class="actions special">
-                                                <li><input type="submit" class="button primary" value="Create Account"></li>
+                                                <li><input type="submit" title="An image of your signature for certificates" class="button primary" value="Create Account"></li>
                                             </ul>
                                         </div>
                                     </div>
@@ -73,7 +73,7 @@
                         </div>
                     <div class="col-4"></div>
                 </div> 
-                <p>Have an account? <a href="/login">Login here</a></p>
+                <p>Have account? <a href="/login">Login here</a></p>
 			</div>
 		</section>
     </div>
