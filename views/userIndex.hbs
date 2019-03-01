@@ -3,21 +3,24 @@
     <!-- Page Wrapper -->
     <div id="page-wrapper">
 
+        <!-- Header -->
+        <header id="header" class={{header}}>
+            <h1><a href="/userIndex">Ukdah</a></h1>
+        </header>
+
         <!-- Main -->
         <article id="main">
             <header>
-                <h2>User Information</h2>
+                <h2>Ukdah User</h2>
             </header>
             <section class="wrapper style5">
                 <div class="inner">
                     <section>
-                        <b>First Name: </b> {{First_Name}} <br>
-                        <b>Last Name: </b> {{Last_Name}} <br>
-                        <b>Email: </b> {{Email}} <br>
-                        <b>Account Creation Date: </b> {{Date}} <br>
-                        <b>Signature: </b> {{Signature}} <br><br>
-                        <a href="/userSettings" class="button fit">Edit Profile</a><br>
-                        <a href="/login">Logout</a>
+                        <ul class=""> 
+                            <li><a href="/createAward">Awards: All user awards (Create, Read, Update, Delete)</a></li>
+                            <li><a href="/userAccount">Profile: User Account Information</a></li>
+                            <li><a href="/login">Logout</a></li>
+                        </ul>                    
                     </section>
                 </div>
             </section>
