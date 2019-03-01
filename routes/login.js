@@ -13,6 +13,7 @@ function isEmpty (obj) {
 router.get('/', function(req, res) {
     if (global.email) {
         console.log("session");
+        global.userID = "";
         global.email = "";
         global.fname = "";
         global.lname = "";
@@ -49,6 +50,7 @@ router.post('/', function(req, res) {
         	res.render('login', context);
         } else {
         	console.log("Email found");
+            global.userID = rows[0].userID;
         	global.fname = rows[0].fname;
         	global.lname = rows[0].lname;
         	global.email = rows[0].email;

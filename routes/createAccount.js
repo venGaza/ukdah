@@ -82,7 +82,7 @@ router.post('/', function(req, res) {
             res.render('createAccount', {errors:errors});
         } else {
         	console.log("insert successful");
-        	res.redirect('/login');
+        	res.redirect('/userIndex');
         }
 	});
 })

@@ -1,0 +1,50 @@
+<body class="is-preload">
+
+    <!-- Page Wrapper -->
+    <div id="page-wrapper">
+
+        <!-- Header -->
+		<header id="header" class=''>
+			<h1><a href="/userIndex">Ukdah</a></h1>
+		</header>
+
+        <!-- Main -->
+        <article id="main">
+            <header>
+                <h2>User Awards List</h2>
+                <p>List of awards issued by user</p>
+            </header>
+            <section class="wrapper style5">
+                <div class="inner">
+                    <i><a href="/userIndex" class="icon fa-arrow-left"><span class="label">Go to user home page</span> Back to user home</a></i>
+                    <br><br><br>
+                    <h4>Awards</h4>
+                    <div class="table-wrapper">
+                        <table class="alt" id="scrollyTable"> 
+                            <thead class="">
+                                <th>Award</th>
+                                <th>Award Description</th>
+                                <th>Employee</th>
+                                <th>Award Date</th>
+                                <th></th>  
+                            </thead> 
+                            
+                            <tbody> 
+                                {{#each awards}}
+                                <tr> 
+                                    <td><a title="Update award" href="/updateAward/{{Cert_ID}}">{{Award_Name}}</a></td>
+                                    <td>{{Award_Desc}}</td>
+                                    <td>{{Employee}}</td>
+                                    <td>{{Award_Date}}</td>
+                                    <td><a href="#"><i title="Delete {{Award_Name}} permanently" class="fa fa-trash fa-lg" onclick="deleteCert({{Cert_ID}})"></i></a></td>
+                                </tr>
+                                {{/each}}  
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+        </article>
+    </div>
+    <script src="/static/javascripts/deleteCert.js"></script>
+</body>
