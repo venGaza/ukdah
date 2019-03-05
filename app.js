@@ -12,6 +12,7 @@ var createError = require('http-errors'),
     bcrypt = require('bcrypt'),
     session = require('express-session'),
     sequelize = require('sequelize');
+    pdf = require('pdfkit');
 
 // route variables
 var indexRouter = require('./routes/index'),

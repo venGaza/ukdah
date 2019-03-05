@@ -1,4 +1,6 @@
 var express = require('express');
+var pdf = require('pdfkit');
+var fs = require('fs');
 var router = express.Router();
 
 // Create employees object
@@ -48,8 +50,7 @@ router.post('/', function(req, res) {
     var awardID = req.body.award;
     var empID = req.body.employee;
     var awardDate = req.body.date;
-
-    console.log(awardID);
+    var myDoc = new pdf;
 
     let query = `INSERT INTO userAwards `;
     query += `VALUES(?,`;
@@ -66,6 +67,12 @@ router.post('/', function(req, res) {
             res.render('createAward', {errors:errors});
         } else {
             console.log("insert successful");
+            myDoc.image('./public/images/certificateTemplate.jpg', 0, 0, {
+                height: 800,
+                width: 620
+            });
+            myDoc.pipe(fs.createWriteStream('./certificates/' + userID + '_' + awardID + '.pdf'));
+            myDoc.end();
             res.redirect('/userIndex');
         }
     });
