@@ -36,7 +36,7 @@
                                     <select name="award" id="award" value="{{awardID}}">
                                         <option value="">- Award Name -</option>
                                         {{#each awards}}
-                                            <option value="{{awardID}}">{{awardName}}</option>
+                                            <option value="{{awardID}},{{awardName}},{{awardDesc}}">{{awardName}}</option>
                                         {{/each}}
                                     </select>
                                 </div>
@@ -44,7 +44,7 @@
                                     <select name="employee" id="employee" value="{{empID}}">
                                         <option value="">- Employee -</option>
                                         {{#each employees}}
-                                            <option value="{{empID}}">{{fname}}</option>
+                                            <option value="{{empID}},{{fname}},{{lname}},{{email}}">{{fname}}</option>
                                         {{/each}}
                                     </select>
                                 </div>
