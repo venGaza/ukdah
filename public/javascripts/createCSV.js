@@ -35,7 +35,7 @@ function createCSV(data) {
         }
     }
 
-    document.getElementById('premadeExport').addEventListener("click", function () {
+    document.getElementById('premadeExport').onclick = function () {
         download("data.csv", csv);
-    });
+    };
 }
