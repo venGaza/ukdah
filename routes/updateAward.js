@@ -23,13 +23,7 @@ router.get('/',function(req, res, next){
                 INNER JOIN employee e ON e.empID=ua.empID \
                 INNER JOIN award a ON a.awardID=ua.awardID \
                 WHERE ua.userID='` + global.userID + `'`;
-
-    console.log(global.userID);
-    //let sql2 = `SELECT regID, regName FROM region`;
-    //let sql3 = `SELECT userTypeID FROM userTypeID`;
     getAwards(res, sqlite3, sql, context, complete);
-    //getRegions(res, sqlite3, sql2, context, complete);
-    //getUserTypes(res, sqlite3, sql3, context, complete);
     function complete(){
         callbackCount++;
         if(callbackCount >= 1){

@@ -13,6 +13,7 @@ var createError = require('http-errors'),
     session = require('express-session'),
     sequelize = require('sequelize'),
     nodemailer = require('nodemailer');
+    pdf = require('pdfkit');
 
 // route variables
 var indexRouter = require('./routes/index'),

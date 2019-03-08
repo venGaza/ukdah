@@ -21,6 +21,26 @@ function getUsers(res, sqlite3, sql, context, complete) {
     });
 };
 
+function getRegions(res, sqlite3, sql, context, complete) {
+    sqlite3.db.all(sql, [], (error, results) => {
+        var length = 0;
+        if (error) {
+            res.write(JSON.stringify(error));
+            res.end();
+        }
+        results.forEach((result) => {
+            length++;
+        });
+        var users = new Array(length);
+        for (i = 0; i < length; i++) {
+            users[i] = results[i];
+        }
+        context.regionAwards = JSON.stringify(users);
+        context.users = results;
+        complete();
+    });
+};
+
 /* GET home page. */
 router.get('/', function (req, res, next) {
     var callbackCount = 0;
@@ -30,11 +50,19 @@ router.get('/', function (req, res, next) {
 				JOIN userAwards
 				ON user.userID = userAwards.userID
 				GROUP BY userAwards.userID
-				ORDER BY Num_Awards DESC;`
+                ORDER BY Num_Awards DESC;`
+    let sql5 = `SELECT regName as Region, COUNT(userAwards.userID) as Awards FROM region
+				JOIN user
+				ON region.regID = user.regID
+				JOIN userAwards
+				ON user.userID = userAwards.userID
+				GROUP BY regName
+				ORDER BY Awards DESC;`
     getUsers(res, sqlite3, sql4, context, complete);
+    getRegions(res, sqlite3, sql5, context, complete);
     function complete() {
         callbackCount++;
-        if (callbackCount >= 1) {
+        if (callbackCount >= 2) {
             res.render('adminBusiness', context);
         }
     }
