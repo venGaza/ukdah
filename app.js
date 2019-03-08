@@ -45,20 +45,6 @@ var transporter = nodemailer.createTransport({
      }
  });
 
-const mailOptions = {
-  from: 'ukdah.recognition@gmail.com', // sender address
-  to: 'jonesdus@oregonstate.edu', // list of receivers
-  subject: 'Test', // Subject line
-  html: '<p>This works!</p>'// plain text body
-};
-
-/* transporter.sendMail(mailOptions, function (err, info) {
-  if(err)
-    console.log(err)
-  else
-    console.log(info);
-}); */
-
 // application variable
 var app = express();
 

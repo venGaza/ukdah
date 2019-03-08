@@ -2,6 +2,8 @@ var express = require('express');
 var pdf = require('pdfkit');
 var fs = require('fs');
 var router = express.Router();
+var nodemailer = require('nodemailer');
+require('dotenv').config();
 
 // Create employees object
 function getEmployees(res, sqlite3, sql, context, complete){
@@ -43,7 +45,6 @@ router.get('/',function(req, res, next){
     }
 });
 
-
 router.post('/', function(req, res) {
     var sqlite3 = req.app.get('sqlite3');
     var userID = global.userID;
@@ -70,6 +71,7 @@ router.post('/', function(req, res) {
 
     console.log(query);
 
+    // Create pdf certificate
     sqlite3.db.run(query, [], (errors, rows) => {
         if (errors) {
             throw errors;
@@ -101,9 +103,44 @@ router.post('/', function(req, res) {
             });
             myDoc.pipe(fs.createWriteStream('./certificates/' + userID + '_' + awardID + '_' + awardDate + '.pdf'));
             myDoc.end();
-            res.redirect('/userIndex');
         }
     });
+
+    // Email certificate to awardee
+    var transporter = nodemailer.createTransport({
+        service: 'gmail',
+        auth: {
+               user: process.env.EMAIL_USER,
+               pass: process.env.EMAIL_PASSWORD
+           }
+    });
+
+    const mailOptions = {
+        from: 'ukdah.recognition@gmail.com', // sender address
+        to: 'jonesdus@oregonstate.edu', // list of receivers
+        subject: awardName, // Subject line
+        attachments: {   // file on disk as an attachment
+            filename: empLname + empFname + '.pdf',
+            path: './certificates/' + userID + '_' + awardID + '_' + awardDate + '.pdf' // stream this file
+        },
+        html: `Congratulations ${empFname}! <br><br> ${userFname} ${userLname} wants to recognize your\
+               superior work achievement and award you with an ${awardName} certificate which is attached\
+               to this email. Again, congratulations for your achievement and keep up the terrific work! <br><br>\
+               Best Regards <br><br>\
+               The Ukdah Team <br>\
+               1234 Someplace, Somewhere 19087<br>\
+               (123)456-7890`// plain text body
+      };
+      
+    transporter.sendMail(mailOptions, function (err, info) {
+        if(err)
+          console.log(err)
+        else
+          console.log(info);
+    });
+
+    // Take user back to index page
+    res.redirect('/userIndex');
 });
 
 module.exports = router;
