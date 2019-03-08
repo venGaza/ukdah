@@ -116,7 +116,7 @@ router.post('/', function(req, res) {
     });
 
     const mailOptions = {
-        from: 'ukdah.recognition@gmail.com', // sender address
+        from: 'Ukdah Employee Recognition', // sender address
         to: empEmail, // list of receivers
         subject: awardName, // Subject line
         attachments: {   // file on disk as an attachment
