@@ -44,12 +44,13 @@
                                 <th>Name</th>
                                 <th></th> 
                                 <th></th>  
-                                <th></th>  
+                                 
                                 <th>Email</th>
                                 <th>Password</th>
                                 <th>Region</th>
                                 <th>Type</th>
                                 <th>Created</th>    
+                                <th></th> 
                             </thead> 
                             
                             <tbody> 
@@ -58,12 +59,13 @@
                                     <td><a title="Edit user" href="/admin/users/{{User_ID}}">{{Full_Name}}</a></td> 
                                     <td><a href="/admin/employees/{{User_ID}}"><i title="Employee List for {{Full_Name}}" class="fa fa-users fa-lg"></i></a></td>
                                     <td><a href="/admin/awards/{{User_ID}}"><i title="Awards given by {{Full_Name}}" class="fa fa-trophy fa-lg"></i></a></td>
-                                    <td><a href="#"><i title="Delete {{Full_Name}} permanently" class="fa fa-trash fa-lg" onclick="deleteUser({{User_ID}})"></i></a></td>
+                                    
                                     <td>{{Email}}</td> 
                                     <td>{{Password}}</td>
                                     <td>{{Region}}</td>
                                     <td>{{User_Type}}</td>
                                     <td>{{Date}}</td> 
+                                    <td><a href="#"><i title="Delete {{Full_Name}} permanently" class="fa fa-trash fa-lg" onclick="deleteUser({{User_ID}})"></i></a></td>
                                 </tr>
                                 {{/each}}  
                             </tbody>

@@ -11,7 +11,8 @@ var createError = require('http-errors'),
     LocalStrategy = require('passport-local').Strategy,
     bcrypt = require('bcrypt'),
     session = require('express-session'),
-    sequelize = require('sequelize');
+    sequelize = require('sequelize'),
+    nodemailer = require('nodemailer');
 
 // route variables
 var indexRouter = require('./routes/index'),
@@ -32,6 +33,30 @@ var indexRouter = require('./routes/index'),
     userSettings = require('./routes/userSettings'),
     createAward = require('./routes/createAward');
     updateAward = require('./routes/updateAward');
+
+// Email Transporter
+require('dotenv').config();
+var transporter = nodemailer.createTransport({
+  service: 'gmail',
+  auth: {
+         user: process.env.EMAIL_USER,
+         pass: process.env.EMAIL_PASSWORD
+     }
+ });
+
+const mailOptions = {
+  from: 'ukdah.recognition@gmail.com', // sender address
+  to: 'jonesdus@oregonstate.edu', // list of receivers
+  subject: 'Test', // Subject line
+  html: '<p>This works!</p>'// plain text body
+};
+
+/* transporter.sendMail(mailOptions, function (err, info) {
+  if(err)
+    console.log(err)
+  else
+    console.log(info);
+}); */
 
 // application variable
 var app = express();
