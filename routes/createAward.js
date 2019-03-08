@@ -117,7 +117,7 @@ router.post('/', function(req, res) {
 
     const mailOptions = {
         from: 'ukdah.recognition@gmail.com', // sender address
-        to: 'jonesdus@oregonstate.edu', // list of receivers
+        to: empEmail, // list of receivers
         subject: awardName, // Subject line
         attachments: {   // file on disk as an attachment
             filename: empLname + empFname + '.pdf',
