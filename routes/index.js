@@ -5,7 +5,7 @@ var router = express.Router();
 router.get('/', function(req, res, next) {
 	if (global.email) {
         console.log("session");
-        res.redirect('/userIndex');
+        res.redirect('/user');
     } else {
     	console.log("no session");
         var context = {};

@@ -44,7 +44,7 @@
                                     <select name="employee" id="employee" value="{{empID}}">
                                         <option value="">- Employee -</option>
                                         {{#each employees}}
-                                            <option value="{{empID}},{{fname}},{{lname}},{{email}}">{{fname}}</option>
+                                            <option value="{{empID}},{{fname}},{{lname}},{{email}}">{{fname}} {{lname}}</option>
                                         {{/each}}
                                     </select>
                                 </div>
@@ -54,7 +54,7 @@
                                 <div class="col-12">
                                     <input type="submit" value="Email Award" class="primary"/>
                                 </div>
-                                <a href="/userIndex">Cancel</a>
+                                <a href="/user">Cancel</a>
                             </div>
                         </form>
                     </section>

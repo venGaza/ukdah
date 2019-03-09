@@ -29,10 +29,11 @@ var indexRouter = require('./routes/index'),
     adminAccountRouter = require('./routes/adminAccount'),
     createAccount = require('./routes/createAccount'),
     login = require('./routes/login'),
-    userIndex = require('./routes/userIndex'),
-    userAccount = require('./routes/userAccount'),
+    userIndexRouter = require('./routes/userIndex'),
+    userEmployeesRouter = require('./routes/userEmployees'),
+    userAccountRouter = require('./routes/userAccount'),
     userSettings = require('./routes/userSettings'),
-    createAward = require('./routes/createAward');
+    createAwardRouter = require('./routes/createAward');
     updateAward = require('./routes/updateAward');
 
 // Email Transporter
@@ -78,11 +79,12 @@ app.use('/admin/business', adminBusinessRouter);
 app.use('/admin/account', adminAccountRouter);
 app.use('/createAccount', createAccount);
 app.use('/login', login);
-app.use('/userIndex', userIndex);
-app.use('/userAccount', userAccount);
+app.use('/user', userIndexRouter);
+app.use('/user/employees', userEmployeesRouter);
+app.use('/user/account', userAccountRouter);
 app.use('/userSettings', userSettings);
-app.use('/createAward', createAward);
-app.use('/updateAward', updateAward);
+app.use('/user/createAward', createAwardRouter);
+app.use('/user/updateAward', updateAward);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

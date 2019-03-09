@@ -57,7 +57,7 @@ router.post('/', function(req, res) {
             global.userPass = rows[0].userPass;
             global.date = rows[0].userDate;
             if (rows[0].userTypeID == 1) {
-                res.redirect('/userIndex');
+                res.redirect('/user');
             } else {
                 res.redirect('/admin');
             }    

@@ -6,8 +6,8 @@ var nodemailer = require('nodemailer');
 require('dotenv').config();
 
 // Create employees object
-function getEmployees(res, sqlite3, sql, context, complete){
-    sqlite3.db.all(sql, [], (error, results) => {
+function getEmployees(res, sqlite3, sql, id, context, complete){
+    sqlite3.db.all(sql, id, (error, results) => {
         if(error){
             res.write(JSON.stringify(error));
             res.end();
@@ -33,9 +33,10 @@ router.get('/',function(req, res, next){
     var callbackCount = 0;
     var context = {};
     var sqlite3 = req.app.get('sqlite3');
-    let sql2 = `SELECT empID, fname, lname, email FROM employee`
+    let sql2 = `SELECT empID, fname, lname, email FROM employee WHERE userID=?`
+    let id = global.userID;
     let sql3 = `SELECT awardID, awardName, awardDesc FROM award`
-    getEmployees(res, sqlite3, sql2, context, complete);
+    getEmployees(res, sqlite3, sql2, id, context, complete);
     getAwards(res, sqlite3, sql3, context, complete);
     function complete(){
         callbackCount++;
@@ -140,7 +141,7 @@ router.post('/', function(req, res) {
     });
 
     // Take user back to index page
-    res.redirect('/userIndex');
+    res.redirect('/user');
 });
 
 module.exports = router;
