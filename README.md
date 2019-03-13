@@ -184,6 +184,11 @@ $ npm start
 - [Cookie-Parser](https://expressjs.com/en/resources/middleware/cookie-parser.html)- Parse cookie header and populate req.cookies. See also cookies and keygrip
 - [Path](https://nodejs.org/api/path.html) - The path module provides utilities for working with file and directory paths.
 - [Body-Parser](https://www.npmjs.com/package/body-parser) - Node.js body parsing middleware.
+- [Nodemailer](https://nodemailer.com) - Nodemailer is a module to send emails.
+- [PDFKit](http://pdfkit.org/) - PDF document generation library
+- [Passport](http://www.passportjs.org/) - Passport is authentication middleware for Node.js. Extremely flexible and modular, Passport can be unobtrusively dropped in to any Express-based web application.
+- [Dotenv](https://github.com/motdotla/dotenv) - Dotenv is a zero-dependency module that loads environment variables from a .env file into process.env.
+- [Bcrypt](https://www.npmjs.com/package/bcrypt) - Password hashing
 
 ## Application Structure
 
@@ -205,6 +210,17 @@ This project leverages an embedded database, SQLite, as opposed to the client-se
 ## Authentication
 
 ## Certificate Generation
+The application makes use of two main node modules to accomplish the certificate generation which are PDFKit and Nodemailer. When users sign in to the application, they will first arrive at the user index page and are presented with a basic menu. In order for users to send a certificate, they must first add their employees names and emails to their profile by filling out a simple form.
+
+![Alt text](public/images/readme/createEmployee.jpg?raw=true "Create Employee")
+
+After adding their employees, the user will then navigate to the create award page. This will be another form which provides drop downs for types of awards the user can give and their current employee list. Once the selections have been made, the user just needs to press send and a certificate will automatically be generated and sent to the selected employees email automatically. 
+
+![Alt text](public/images/readme/createAward.jpg?raw=true "Create Award")
+
+The web application first uses PDFkit to overlay text over a prerendered image. Node then sends a database query to retrieve the user's name, employee's name, date, and signature. It appends each of these items at a specific coordinate over the certificate image to give the appearance of being filled out and then outputs the final product to a certificate folder. The next module that is used is Nodemailer. This module simply connects the application to a third party email service and emails the a pregenerated message (again using the query data from the prevous part) and certificate as an attachment. The final output looks like this: 
+
+![Alt text](public/images/readme/email.jpg?raw=true "Example Email")
 
 ## Business Intelligence Analytics
 

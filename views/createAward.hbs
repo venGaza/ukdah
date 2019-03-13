@@ -30,33 +30,34 @@
                     </section-->
 
                     <section>
-                        <form method="post" action="" style="margin-top:25px">
-                            <div class="row gtr-uniform">
-                                <div class="col-12 col-12-xsmall">
-                                    <select name="award" id="award" value="{{awardID}}">
-                                        <option value="">- Award Name -</option>
-                                        {{#each awards}}
-                                            <option value="{{awardID}},{{awardName}},{{awardDesc}}">{{awardName}}</option>
-                                        {{/each}}
-                                    </select>
+                        <div class="row gtr-uniform">
+                            <div class="col-4"></div>
+                                <div class="inner col-4 col-12-small">
+                                    <p id="errMessage">{{error}}</p>
+                                    <section>
+                                        <form method="POST" action="/user/createAward" id="createAward">
+                                            <select name="award" id="award" value="{{awardID}}">
+                                                <option value="">- Award Name -</option>
+                                                {{#each awards}}
+                                                    <option value="{{awardID}},{{awardName}},{{awardDesc}}">{{awardName}}</option>
+                                                {{/each}}
+                                            </select><br>
+                                            <select name="employee" id="employee" value="{{empID}}">
+                                                <option value="">- Employee -</option>
+                                                {{#each employees}}
+                                                    <option value="{{empID}},{{fname}},{{lname}},{{email}}">{{fname}} {{lname}}</option>
+                                                {{/each}}
+                                            </select><br>
+                                                Certificate Date  : <input type="date" name="date" id="date" value="" placeholder="Award Date" /> <br><br>
+                                            <ul class="actions special">
+                                                <li><input type="submit" class="button primary" value="Email Award"></li>
+                                            </ul>
+
+                                        </form>
+                                    </section>
                                 </div>
-                                <div class="col-12 col-12-xsmall">
-                                    <select name="employee" id="employee" value="{{empID}}">
-                                        <option value="">- Employee -</option>
-                                        {{#each employees}}
-                                            <option value="{{empID}},{{fname}},{{lname}},{{email}}">{{fname}} {{lname}}</option>
-                                        {{/each}}
-                                    </select>
-                                </div>
-                                <div class="col-4 col-12-xsmall">
-                                    <input type="date" name="date" id="date" value="" placeholder="Award Date" />
-                                </div>
-                                <div class="col-12">
-                                    <input type="submit" value="Email Award" class="primary"/>
-                                </div>
-                                <a href="/user">Cancel</a>
-                            </div>
-                        </form>
+                            <div class="col-4"></div>
+                        </div> 
                     </section>
                 </div>
             </section>

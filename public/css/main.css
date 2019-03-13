@@ -4182,3 +4182,9 @@ body.is-preload #banner2:after {
 	#errMessage {
 		color: #ff0000;
 	}
+
+	/* #date {
+		display: block;
+    	margin-left: auto;
+    	margin-right: auto;
+	} */
