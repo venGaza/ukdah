@@ -49,40 +49,29 @@ router.get('/',function(req, res, next){
     }
 });
 
-//register process
+// Create Ukdah account and redirect to login page
 router.post('/', function(req, res) {
 	var sqlite3 = req.app.get('sqlite3');
 	var email = req.body.email;
 	var fname = req.body.fname;
 	var lname = req.body.lname;
     var password = req.body.password;
-    var date = new Date();
-    var signature = '?';
-    var type = 1;
-    var region = 1;
+    var signature = req.body.sig;
+    var type = req.body.type;
+    var region = req.body.region;
 
-    console.log(date);
+    var sql = `INSERT INTO user (fname, lname, email, userPass, userTypeID, regID, userSig) \
+               VALUES (?, ?, ?, ?, ?, ?, ?)`;
+    var inserts = [fname, lname, email, password, type, region, signature]
 
-    let query = `INSERT INTO user `;
-    query += `VALUES(?,`;
-    query += `'` + fname + `',`;
-    query += `'` + lname + `',`;
-    query += `'` + email + `',`;
-    query += `'` + password + `',`;
-    query += `'` + date + `',`;
-    query += `'` + signature + `',`;
-    query += `'` + type + `',`;
-    query += `'` + region + `')`;
+    console.log(sql);
 
-    console.log(query);
-
-    sqlite3.db.run(query, [], (errors, rows) => {
+    sqlite3.db.run(sql, inserts, (errors, rows) => {
 		if (errors) {
 			throw errors;
-            res.render('createAccount', {errors:errors});
         } else {
         	console.log("insert successful");
-        	res.redirect('/userIndex');
+        	res.redirect('/user');
         }
 	});
 })

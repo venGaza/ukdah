@@ -3,6 +3,7 @@ var router = express.Router();
 var nodemailer = require('nodemailer');
 require('dotenv').config();
 
+// Checks if an object is empty
 function isEmpty (obj) {
     for (var key in obj) {
         if (obj.hasOwnProperty(key))
