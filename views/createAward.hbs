@@ -3,15 +3,38 @@
     <!-- Page Wrapper -->
     <div id="page-wrapper">
 
+        <!-- Header -->
+        <header id="header" class={{header}}>
+            <h1><a href="/user">Ukdah</a></h1>
+            <nav id="nav">
+                <ul>
+                    <li class="special">
+                        <a href="#menu" class="menuToggle"><span>Menu</span></a>
+                        <div id="menu">
+                            <ul>
+                                <li><a href="/user">Home</a></li>
+                                <li><a href="/user/employees">Employee List</a></li>
+                                <li><a href="/user/createAward">Create Award</a></li>
+                                <li><a href="/user/updateAward">Award History</a></li>
+                                <li><a href="/user/account">Account</a></li>
+                                <li><a href="/login">Logout</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+
         <!-- Main -->
         <article id="main">
             <header>
-                <h2>Create Award</h2>
-                <!-- <p>Welcome to Ukdah administrator!</p>  -->
+                <h2>Create Certificate</h2>
+                <p>Choose an award. Choose an employee. Send recognition!</p>
             </header>
             <section class="wrapper style5">
                 <div class="inner">
-
+                    <i><a href="/user" class="icon fa-arrow-left"><span class="label">Go to User home page</span> Back to User Home</a></i>
+                    <br><br><br>
                     <!--section>
                         <div class="scrollmenu" style="background-color:grey;overflow:auto;">
                             <div style="padding:10px;float:left">
@@ -48,11 +71,10 @@
                                                     <option value="{{empID}},{{fname}},{{lname}},{{email}}">{{fname}} {{lname}}</option>
                                                 {{/each}}
                                             </select><br>
-                                                Certificate Date  : <input type="date" name="date" id="date" value="" placeholder="Award Date" /> <br><br>
+                                                Certificate Date  : <input type="date" name="date" id="date" value="" placeholder="Award Date" /> <br><br><br><br>
                                             <ul class="actions special">
                                                 <li><input type="submit" class="button primary" value="Email Award"></li>
                                             </ul>
-
                                         </form>
                                     </section>
                                 </div>

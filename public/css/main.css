@@ -4183,6 +4183,10 @@ body.is-preload #banner2:after {
 		color: #ff0000;
 	}
 
+	#confirmation {
+		color: #009200;
+	}
+
 	/* #date {
 		display: block;
     	margin-left: auto;

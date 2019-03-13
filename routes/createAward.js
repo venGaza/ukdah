@@ -130,7 +130,7 @@ router.post('/', function(req, res) {
                Best Regards <br><br>\
                The Ukdah Team <br>\
                1234 Someplace, Somewhere 19087<br>\
-               (123)456-7890`// plain text body
+               (123) 456-7890`// plain text body
       };
       
     transporter.sendMail(mailOptions, function (err, info) {

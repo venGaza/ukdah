@@ -218,7 +218,7 @@ After adding their employees, the user will then navigate to the create award pa
 
 ![Alt text](public/images/readme/createAward.jpg?raw=true "Create Award")
 
-The web application first uses PDFkit to overlay text over a prerendered image. Node then sends a database query to retrieve the user's name, employee's name, date, and signature. It appends each of these items at a specific coordinate over the certificate image to give the appearance of being filled out and then outputs the final product to a certificate folder. The next module that is used is Nodemailer. This module simply connects the application to a third party email service and emails the a pregenerated message (again using the query data from the prevous part) and certificate as an attachment. The final output looks like this: 
+The web application first uses PDFkit to overlay text over a prerendered image. The originally planned to send the form data to a preformatted LaTeX template, but decided against this route due to the complexity. Node then sends a database query to retrieve the user's name, employee's name, date, and signature. It appends each of these items at a specific coordinate over the certificate image to give the appearance of being filled out and then outputs the final product to a certificate folder. The next module that is used is Nodemailer. This module simply connects the application to a third party email service and emails the a pregenerated message (again using the query data from the prevous part) and certificate as an attachment. The final output looks like this: 
 
 ![Alt text](public/images/readme/email.jpg?raw=true "Example Email")
 

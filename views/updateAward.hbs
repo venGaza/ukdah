@@ -3,20 +3,36 @@
     <!-- Page Wrapper -->
     <div id="page-wrapper">
 
-        <!-- Header -->
-		<header id="header" class=''>
-			<h1><a href="/userIndex">Ukdah</a></h1>
-		</header>
+        <header id="header" class={{header}}>
+            <h1><a href="/user">Ukdah</a></h1>
+            <nav id="nav">
+                <ul>
+                    <li class="special">
+                        <a href="#menu" class="menuToggle"><span>Menu</span></a>
+                        <div id="menu">
+                            <ul>
+                                <li><a href="/user">Home</a></li>
+                                <li><a href="/user/employees">Employee List</a></li>
+                                <li><a href="/user/createAward">Create Award</a></li>
+                                <li><a href="/user/updateAward">Award History</a></li>
+                                <li><a href="/user/account">Account</a></li>
+                                <li><a href="/login">Logout</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </header>
 
         <!-- Main -->
         <article id="main">
             <header>
-                <h2>User Awards List</h2>
-                <p>List of awards issued by user</p>
+                <h2>Award History</h2>
+                <p>List of awards previously given</p>
             </header>
             <section class="wrapper style5">
                 <div class="inner">
-                    <i><a href="/userIndex" class="icon fa-arrow-left"><span class="label">Go to user home page</span> Back to user home</a></i>
+                    <i><a href="/user" class="icon fa-arrow-left"><span class="label">Go to User home page</span> Back to User Home</a></i>
                     <br><br><br>
                     <h4>Awards</h4>
                     <div class="table-wrapper">

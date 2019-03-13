@@ -29,6 +29,7 @@ var indexRouter = require('./routes/index'),
     adminAccountRouter = require('./routes/adminAccount'),
     createAccount = require('./routes/createAccount'),
     login = require('./routes/login'),
+    lostPasswordRouter = require('./routes/lostPassword'),
     userIndexRouter = require('./routes/userIndex'),
     userEmployeesRouter = require('./routes/userEmployees'),
     userAccountRouter = require('./routes/userAccount'),
@@ -79,6 +80,7 @@ app.use('/admin/business', adminBusinessRouter);
 app.use('/admin/account', adminAccountRouter);
 app.use('/createAccount', createAccount);
 app.use('/login', login);
+app.use('/lostPassword', lostPasswordRouter);
 app.use('/user', userIndexRouter);
 app.use('/user/employees', userEmployeesRouter);
 app.use('/user/account', userAccountRouter);

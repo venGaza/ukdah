@@ -5,18 +5,18 @@
 
         <!-- Header -->
 		<header id="header" class={{header}}>
-			<h1><a href="/userIndex">Ukdah</a></h1>
+			<h1><a href="/user">Ukdah</a></h1>
 			<nav id="nav">
 				<ul>
 					<li class="special">
 						<a href="#menu" class="menuToggle"><span>Menu</span></a>
 						<div id="menu">
 							<ul>
-								<li><a href="/userIndex">Home</a></li>
-                                <li><a href="/admin/users">Add Employees</a></li>
-                                <li><a href="/admin/awards">Create Award</a></li>
-                                <li><a href="/admin/awardTypes">View and Update Awards</a></li>
-                                <li><a href="/admin/account">Account</a></li>
+								<li><a href="/user">Home</a></li>
+                                <li><a href="/user/employees">Employee List</a></li>
+                                <li><a href="/user/createAward">Create Award</a></li>
+                                <li><a href="/user/updateAward">Award History</a></li>
+                                <li><a href="/user/account">Account</a></li>
 								<li><a href="/login">Logout</a></li>
 							</ul>
 						</div>
@@ -29,14 +29,15 @@
         <article id="main">
             <header>
                 <h2>Ukdah User</h2>
+                <p>Add employees. Create Awards. Send much needed recognition!</p>
             </header>
             <section class="wrapper style5">
                 <div class="inner">
                     <section>
                         <ul class="">
-                            <li><a href="/user/employees">Employees: View, add, and delete your employees</a></li> 
-                            <li><a href="/user/createAward">Create Award: Issued to employee via email</a></li>
-                            <li><a href="/user/updateAward">Update Award: Change created awards</a></li>
+                            <li><a href="/user/employees">Employee List: View, add, and delete employees associated with your account.</a></li> 
+                            <li><a href="/user/createAward">Create Award: Choose an employee. Choose an award. Send recognition!</a></li>
+                            <li><a href="/user/updateAward">Award History: View and change awards previously given.</a></li>
                             <li><a href="/user/account">Profile: User account information</a></li>
                             <li><a href="/login">Logout</a></li>
                         </ul>                    
