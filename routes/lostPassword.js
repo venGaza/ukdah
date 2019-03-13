@@ -54,7 +54,7 @@ router.post('/', function(req, res) {
 
             const mailOptions = {
                 from: 'Ukdah Employee Recognition', // sender address
-                to: 'jonesdus@oregonstate.edu', // list of receivers
+                to: inserts, // list of receivers
                 subject: 'Ukdah Account: Lost Password', // Subject line
                 html: `${userName}, <br><br> Here is your password for Ukdah. Next time a $5 surcharge will be assessed! <br><br>\
                     PASSWORD : ${userPass} <br><br>\
