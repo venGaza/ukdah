@@ -35,64 +35,33 @@
 
             <section class="wrapper style5">
                 <div class="inner">
-                    <i><a href="/admin" class="icon fa-arrow-left"><span class="label">Go to admin home page</span> Back to admin home</a></i>
+                    <i><a href="/admin" class="icon fa-arrow-left"><span class="label">Go to admin home page</span> Back to admin
+                            home</a></i>
                     <br><br><br>
-
+            
                     <h3>Premade Intelligence</h3>
-                    <section style="width:100%; height:100px">
-                        <button onclick="createCSV({{createAward}})" style="float:left; margin:10px">Users by created awards</button>
-                        <button onclick="createCSV({{regionAwards}})" style="float:left; margin:10px">Regions by most awards</button>
-
-                    </section>
-                    <button id="premadeExport">Export</button>
+                    <form method="get" action="business/customCSV">
+                        <button type="submit" name="table" value="1">Users By Created Awards</button>
+                        <button type="submit" name="table" value="2">Regions by most awards</button>
+                    </form>
                 </div>
-
+            
             </section>
-
+            
             <hr style="border-bottom:solid 2px black;margin:0px">
-
+            
             <section class="wrapper style5">
                 <div class="inner">
-                    <h3>Custom Intelligence</h3>
-                    <section style="width:100%; height:250px">
-                        <div style="float:left; width:30%; margin:10px">
-                            Select
-                            <select>
-                                <option value="1">User Names</option>
-                                <option value="2">value 2</option>
-                                <option value="3">value 3</option>
-                                <option value="4">value 4</option>
-                                <option value="5">value 5</option>
-                                <option value="6">value 6</option>
-                                <select>
-                        </div>
-
-                        <div style="float:left; width:30%; margin:10px">
-                            From
-                            <select>
-                                <option value="1">value 1</option>
-                                <option value="2">value 2</option>
-                                <option value="3">value 3</option>
-                                <option value="4">value 4</option>
-                                <option value="5">value 5</option>
-                                <option value="6">value 6</option>
-                                <select>
-                        </div>
-
-                        <div style="float:left; width:30%; margin:10px">
-                            Where
-                            <select>
-                                <option value="1">value 1</option>
-                                <option value="2">value 2</option>
-                                <option value="3">value 3</option>
-                                <option value="4">value 4</option>
-                                <option value="5">value 5</option>
-                                <option value="6">value 6</option>
-                                <select>
-                        </div>
+                    <h3>Download Tables</h3>
+                    <section style="width:100%; height:100px">
+            
+                        <form method="get" action="business/customCSV">
+                            <button type="submit" name="table" value="3">User</button>
+                            <button type="submit" name="table" value="4">Employee</button>
+                            <button type="submit" name="table" value="5">Region</button>
+                            <button type="submit" name="table" value="6">Award</button>
+                        </form>
                     </section>
-
-                    <button>Export</button>
                 </div>
             </section>
         </article>
