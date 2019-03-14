@@ -20,7 +20,8 @@ router.get('/', function(req, res) {
             First_Name: global.fname,
             Last_Name: global.lname,
             Email: global.email,
-            Date: global.date
+            Date: global.date,
+            userID: global.userID
         });
     } else {
         console.log("session not valid");
