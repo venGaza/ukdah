@@ -297,11 +297,10 @@ The web application first uses PDFkit to overlay text over a prerendered image. 
     -	Homepage Lorem Ipsum -> English conversion
     -	Admin View (adminBusiness)
     - CSV Files
+    - Analytics
 - **Dustin Jones** - [venGaza](https://github.com/venGaza)
   - Contributions (104 Commits)
     - README
-    - Banner
-    -	Project Plan
     -	GitHub Repo
     - Github branch manager
     -	.gitignore
