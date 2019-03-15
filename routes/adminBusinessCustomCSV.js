@@ -90,7 +90,7 @@ function craftSQLStatement(req) {
         }
 
         if (req.order_1 == 1){
-            groupBy = `ORDER BY userID`;
+            groupBy = `ORDER BY user.userID`;
         }
         userTable = true;
         numCalls++;
@@ -147,7 +147,7 @@ function craftSQLStatement(req) {
         }
 
         if (req.order_5 == 1) {
-            groupBy = `ORDER BY userDate`;
+            groupBy = `ORDER BY user.userDate`;
         }
         userTable = true;
         numCalls++;
@@ -161,7 +161,7 @@ function craftSQLStatement(req) {
         }
 
         if (req.order_6 == 1) {
-            groupBy = `ORDER BY userSig`;
+            groupBy = `ORDER BY user.userSig`;
         }
         userTable = true;
         numCalls++;
@@ -175,7 +175,7 @@ function craftSQLStatement(req) {
         }
 
         if (req.order_7 == 1) {
-            groupBy = `ORDER BY userSig`;
+            groupBy = `ORDER BY user.userTypeID`;
         }
         userTable = true;
         numCalls++;
