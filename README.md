@@ -70,7 +70,13 @@ If you do not have access to the OSU VPN, please download the project and view l
   <img src="public/images/readme/s8.jpg?raw=true" width="200" /> 
   <img src="public/images/readme/s9.jpg?raw=true" width="200" />
 </p>
-  
+
+<p float="left" align="center">
+  <img src="public/images/readme/s10.jpg?raw=true" width="200" />
+  <img src="public/images/readme/s11.jpg?raw=true" width="200" /> 
+  <img src="public/images/readme/s12.jpg?raw=true" width="200" />
+</p>
+
 ## Getting Started
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
@@ -275,6 +281,18 @@ The web application first uses PDFkit to overlay text over a prerendered image. 
 
 ## Business Intelligence Analytics
 
+A functionality allowed to adminstrator users is the ability to generate CSV files from the database. This functionality can be reached through the administrator menu and features three separate categories of options. When a link is clicked on this page, the user is taken to a second page which previews the CSV file they are about to download. If the file is correct, the user can click the "download" button to save the CSV file to their computer. Otherwise, they can choose to return to the business intelligence page and choose a different option.
+
+The first section, "premade intelligence", includes two buttons, "Users by created awards" and "Regions by most awards", respectively. The first button will take the user to the CSV preview page where it will list the user and the number of awards they have created in descending order. This CSV file can then be downloaded from that page. The second button will also go the CSV preview page, but it will instead list the regions by the number of awards received by users within those regions. This CSV file can then be downloaded from that page. The second section allows the download of each database table as a CSV file. Each table has a respective link that will take the user to the CSV preview page and allow them to download the table from there. 
+
+<p float="left" align="center">
+  <img src="public/images/readme/premade1.jpg?raw=true" width="200" />
+  <img src="public/images/readme/premade2.jpg?raw=true" width="200" /> 
+  <img src="public/images/readme/premade3.jpg?raw=true" width="200" />
+</p>
+
+The third and final section is the most expansive of the Intelligence abilities. As proper access to data can be incredibly useful in developing a better understanding of a company, community, or any group of people, it was important that the Intelligence feature was robust and able to generate any dataset that the user may require. In the "Custom Intelligence" section of the page, the four major tables of the database have been given their own tables, with each category given their own row with a "select", "count", and "group by" feature. To include a category in the data selection, all the user has to do is choose the checkbox corresponding to the correct row. If the user would like to have that value counted, they can check the checkbox next to the select box. If they wish to group the dataset by that value, there is a radio button on the far right side of the tree. As there cannot be multiple values passed in as "group by", this is a radio button and only one of the data points throughout the whole table can be selected. When the user determines that they have all of the data they wish for, they can click the submit button at the bottom of the table and that will take them to the CSV preview page where they can download the data that they have requested.
+
 ## Built With
 
 * [Visual Studio Code](https://code.visualstudio.com/) - Visual Studio Code is a code editor redefined and optimized for building and debugging modern web and cloud applications.
@@ -293,13 +311,14 @@ The web application first uses PDFkit to overlay text over a prerendered image. 
 ## Authors and Contributions
 
 - **Emmet Cooke** - [emmCooke](https://github.com/emmCooke)
-  - Contributions (6 Commits)
+  - Contributions (7 Commits)
     -	Low-Fidelity View Designs
     -	Midpoint Project Report
     -	Homepage Lorem Ipsum -> English conversion
     -	Admin View (adminBusiness)
     - CSV Files
     - Analytics
+    - Finalized Intelligence Feature
 - **Dustin Jones** - [venGaza](https://github.com/venGaza)
   - Contributions (112 Commits)
     - README
