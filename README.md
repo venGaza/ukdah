@@ -47,7 +47,9 @@ A live demonstration of this web application can be accessed at the following li
 
 [http://flip1.engr.oregonstate.edu:49876](http://flip1.engr.oregonstate.edu:49876)
 
-If you do not have access to the OSU VPN, please download the project and view locally.
+If you do not have access to the OSU VPN, please download the project and view locally. A copy can be obtained at the following github repository: 
+
+[https://github.com/venGaza/ukdah](https://github.com/venGaza/ukdah)
 
 ## Screenshots
 
@@ -299,7 +301,7 @@ The web application first uses PDFkit to overlay text over a prerendered image. 
     - CSV Files
     - Analytics
 - **Dustin Jones** - [venGaza](https://github.com/venGaza)
-  - Contributions (104 Commits)
+  - Contributions (112 Commits)
     - README
     -	GitHub Repo
     - Github branch manager
